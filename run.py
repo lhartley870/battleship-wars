@@ -15,3 +15,14 @@ class Ship:
         odd_columns = [x for x in all_columns if x % 2 != 0]
         column_start_position = random.choice(odd_columns)
         return column_start_position
+
+    def get_ship_position(self):
+        if self.orientation == 'Horizontal':
+            row = random.randrange(1, 11)
+            column_start = self.get_horizontal_ship_start()
+            if (column_start - 2) + self.length * 2 > 19:
+                return self.get_ship_position()
+            else:
+                return row, column_start
+        else:
+            return ('for vertical ships')
