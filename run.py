@@ -29,4 +29,9 @@ class Ship:
             else:
                 return row, starting_column
         else:
-            return ('for vertical ships')
+            column = self.get_board_column()
+            starting_row = self.get_board_row()
+            if (starting_row - 1) + self.length > 10:
+                return self.get_ship_position()
+            else:
+                return starting_row, column
