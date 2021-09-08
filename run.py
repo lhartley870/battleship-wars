@@ -35,3 +35,22 @@ class Ship:
                 return self.get_ship_position()
             else:
                 return self.orientation, starting_row, column
+
+    def get_board_positions(self):
+        ship_position = self.get_ship_position()
+        orientation, row, column = ship_position
+        board_coordinates = []
+        if orientation == 'Horizontal':
+            column_positions = [column]
+            for ind in range(self.length - 1):
+                column_position = column_positions[ind]
+                column_position += 2
+                column_positions.append(column_position)
+            for column_position in column_positions:
+                board_coordinate = []
+                board_coordinate.append(row)
+                board_coordinate.append(column_position)
+                board_coordinates.append(board_coordinate)
+        else:
+            print('vertical ship')
+        return board_coordinates
