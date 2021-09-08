@@ -27,11 +27,11 @@ class Ship:
             if (starting_column - 2) + self.length * 2 > 19:
                 return self.get_ship_position()
             else:
-                return row, starting_column
+                return self.orientation, row, starting_column
         else:
             column = self.get_board_column()
             starting_row = self.get_board_row()
             if (starting_row - 1) + self.length > 10:
                 return self.get_ship_position()
             else:
-                return starting_row, column
+                return self.orientation, starting_row, column
