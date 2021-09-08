@@ -52,5 +52,14 @@ class Ship:
                 board_coordinate.append(column_position)
                 board_coordinates.append(board_coordinate)
         else:
-            print('vertical ship')
+            row_positions = [row]
+            for ind in range(self.length - 1):
+                row_position = row_positions[ind]
+                row_position += 1
+                row_positions.append(row_position)
+            for row_position in row_positions:
+                board_coordinate = []
+                board_coordinate.append(row_position)
+                board_coordinate.append(column)
+                board_coordinates.append(board_coordinate)
         return board_coordinates
