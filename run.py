@@ -184,3 +184,18 @@ class Destroyer(Ship, OccupiedCoordinatesMixin):
         of 2.
         """
         super().__init__(2)
+
+
+def create_aircraft_carrier():
+    """
+    Creates an instance of the AircraftCarrier subclass and
+    utilises the Ship superclass get_board_positions method to
+    return the aircraft carrier's board coordinates.
+    """
+    aircraft_carrier = AircraftCarrier()
+    aircraft_carrier_position = aircraft_carrier.get_board_positions()
+    return aircraft_carrier_position
+
+
+aircraft_carrier_position = create_aircraft_carrier()
+occupied_coordinates = aircraft_carrier_position
