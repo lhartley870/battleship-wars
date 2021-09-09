@@ -193,17 +193,6 @@ class Destroyer(Ship, OccupiedCoordinatesMixin):
         super().__init__(2)
 
 
-def create_aircraft_carrier():
-    """
-    Creates an instance of the AircraftCarrier subclass and
-    utilises the Ship superclass get_board_positions method to
-    return the aircraft carrier's board coordinates.
-    """
-    aircraft_carrier = AircraftCarrier()
-    aircraft_carrier_position = aircraft_carrier.get_board_positions()
-    return aircraft_carrier_position
-
-
 def create_ship_type(ship_subclass, occupied_coordinates):
     """
     Creates an instance of the applicable Ship subclass and utilises
@@ -234,7 +223,8 @@ def create_ship_set():
     coordinates for each ship type and returns an overall list of all board
     coordinates for all the ships.
     """
-    aircraft_carrier_position = create_aircraft_carrier()
+    aircraft_carrier = AircraftCarrier()
+    aircraft_carrier_position = aircraft_carrier.get_board_positions()
     occupied_coordinates = aircraft_carrier_position
     battleship_data = create_ship_type(Battleship, occupied_coordinates)
     occupied_coordinates = battleship_data[1]
@@ -246,3 +236,7 @@ def create_ship_set():
     occupied_coordinates = destroyer_data[1]
 
     return occupied_coordinates
+
+
+x = create_ship_set()
+print(x)
