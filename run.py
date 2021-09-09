@@ -16,7 +16,13 @@ class Ship:
         """
         self.length = length
 
-    orientation = random.choice(('Horizontal', 'Vertical'))
+    def get_ship_orientation(self):
+        """
+        Method to generate a random orientation of horizontal or
+        vertical used by the get_ship_position method
+        """
+        orientation = random.choice(('Horizontal', 'Vertical'))
+        return orientation
 
     def get_board_row_or_column(self):
         """
@@ -33,14 +39,15 @@ class Ship:
         row number for vertically oriented ships used by the
         get_board_positions method.
         """
+        orientation = self.get_ship_orientation()
         # If statement applies where the ship is horizontally oriented.
-        if self.orientation == 'Horizontal':
+        if orientation == 'Horizontal':
             row = self.get_board_row_or_column()
             starting_column = self.get_board_row_or_column()
             if (starting_column - 1) + self.length > 10:
                 return self.get_ship_position()
             else:
-                return self.orientation, row, starting_column
+                return orientation, row, starting_column
         # Else statement applies where the ship is vertically oriented.
         else:
             column = self.get_board_row_or_column()
@@ -48,7 +55,7 @@ class Ship:
             if (starting_row - 1) + self.length > 10:
                 return self.get_ship_position()
             else:
-                return self.orientation, starting_row, column
+                return orientation, starting_row, column
 
     def get_board_positions(self):
         """
