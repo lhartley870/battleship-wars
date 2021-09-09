@@ -197,30 +197,6 @@ def create_aircraft_carrier():
     return aircraft_carrier_position
 
 
-def create_battleship(occupied_coordinates):
-    """
-    Creates an instance of the Battleship subclass and utilises
-    the Ship superclass get_board_positions method to generate the
-    battleship's board coordinates. Utilises the OccupiedCoordinatesMixin
-    class method of check_occupied_coordinates to make sure that the
-    battleship's board coordinates do not clash with those already taken
-    by another ship on the board. If the coordinates are already taken,
-    this function calls itself repeatedly until coordinates that do not
-    clash are obtained.
-    """
-    unavailable_coordinates = occupied_coordinates
-    battleship = Battleship()
-    battleship_carrier_position = battleship.get_board_positions()
-    position_clash_result = battleship.check_occupied_coordinates(
-        occupied_coordinates, battleship_carrier_position)
-    if position_clash_result > 0:
-        return create_battleship(occupied_coordinates)
-    else:
-        for battleship_coordinate in battleship_carrier_position:
-            unavailable_coordinates.append(battleship_coordinate)
-        return battleship_carrier_position, unavailable_coordinates
-
-
 def create_ship_type(ship_subclass, occupied_coordinates):
     """
     Creates an instance of the applicable Ship subclass and utilises
