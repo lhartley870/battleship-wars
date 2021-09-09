@@ -139,3 +139,18 @@ class Battleship(Ship, OccupiedCoordinatesMixin):
         of 4.
         """
         super().__init__(4)
+
+
+class Submarine(Ship, OccupiedCoordinatesMixin):
+    """
+    Subclass of Ship superclass. Sets the ship
+    length of a submarine to 3. Also inherits from
+    OccupiedCoordinatesMixin class.
+    """
+    def __init__(self):
+        """
+        Creates an instance of Submarine subclass utilising the
+        superclass initialiser method and passing it a ship length
+        of 3.
+        """
+        super().__init__(3)
