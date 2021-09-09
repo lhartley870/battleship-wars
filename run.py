@@ -237,16 +237,12 @@ def create_ship_set():
     aircraft_carrier_position = create_aircraft_carrier()
     occupied_coordinates = aircraft_carrier_position
     battleship_data = create_ship_type(Battleship, occupied_coordinates)
-    battleship_position = battleship_data[0]
     occupied_coordinates = battleship_data[1]
     submarine_data = create_ship_type(Submarine, occupied_coordinates)
-    submarine_position = submarine_data[0]
     occupied_coordinates = submarine_data[1]
     cruiser_data = create_ship_type(Cruiser, occupied_coordinates)
-    cruiser_position = cruiser_data[0]
     occupied_coordinates = cruiser_data[1]
     destroyer_data = create_ship_type(Destroyer, occupied_coordinates)
-    destroyer_position = destroyer_data[0]
     occupied_coordinates = destroyer_data[1]
 
     return occupied_coordinates
