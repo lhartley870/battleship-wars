@@ -221,8 +221,35 @@ def create_battleship(occupied_coordinates):
         return battleship_carrier_position, unavailable_coordinates
 
 
+def create_ship_type(ship_subclass, occupied_coordinates):
+    """
+    Creates an instance of the applicable Ship subclass and utilises
+    the Ship superclass get_board_positions method to generate the
+    ship instance's board coordinates. Utilises the OccupiedCoordinatesMixin
+    class method of check_occupied_coordinates to make sure that the
+    ship instance's board coordinates do not clash with those already taken
+    by another ship on the board. If the coordinates are already taken,
+    this function calls itself repeatedly until coordinates that do not
+    clash are obtained.
+    """
+    unavailable_coordinates = occupied_coordinates
+    ship_type = ship_subclass()
+    ship_type_position = ship_type.get_board_positions()
+    position_clash_result = ship_type.check_occupied_coordinates(
+        occupied_coordinates, ship_type_position)
+    if position_clash_result > 0:
+        return create_ship_type(ship_subclass, occupied_coordinates)
+    else:
+        for ship_type_coordinate in ship_type_position:
+            unavailable_coordinates.append(ship_type_coordinate)
+        return ship_type_position, unavailable_coordinates
+
+
 aircraft_carrier_position = create_aircraft_carrier()
 occupied_coordinates = aircraft_carrier_position
 battleship_data = create_battleship(occupied_coordinates)
-battleship_coordinates = battleship_data[0]
+battleship_position = battleship_data[0]
 occupied_coordinates = battleship_data[1]
+submarine_data = create_ship_type(Submarine, occupied_coordinates)
+submarine_position = submarine_data[0]
+occupied_coordinates = submarine_data[1]
