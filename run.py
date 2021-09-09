@@ -86,3 +86,17 @@ class Ship:
                 board_coordinate.append(column)
                 board_coordinates.append(board_coordinate)
         return board_coordinates
+
+
+class AircraftCarrier(Ship):
+    """
+    Subclass of Ship superclass. Sets the ship
+    length of an aircraft carrier to 5.
+    """
+    def __init__(self):
+        """
+        Creates an instance of AircraftCarrier subclass utilising the
+        superclass initialiser method and passing it a ship length
+        of 5.
+        """
+        super().__init__(5)
