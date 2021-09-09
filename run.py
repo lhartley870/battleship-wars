@@ -124,3 +124,18 @@ class AircraftCarrier(Ship):
         of 5.
         """
         super().__init__(5)
+
+
+class Battleship(Ship, OccupiedCoordinatesMixin):
+    """
+    Subclass of Ship superclass. Sets the ship
+    length of a battleship to 4. Also inherits from
+    OccupiedCoordinatesMixin class.
+    """
+    def __init__(self):
+        """
+        Creates an instance of Battleship subclass utilising the
+        superclass initialiser method and passing it a ship length
+        of 4.
+        """
+        super().__init__(4)
