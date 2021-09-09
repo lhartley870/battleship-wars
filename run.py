@@ -88,6 +88,30 @@ class Ship:
         return board_coordinates
 
 
+class OccupiedCoordinatesMixin:
+    """
+    Mixin to check a list of new coordinates against a list
+    of occupied coordinates.
+    """
+    def check_occupied_coordinates(
+            self, occupied_coordinates, new_coordinates):
+        """
+        For each new coordinate checked a True or False value
+        is added to the checked_results list (True if there is a match
+        and False if there is not). The method returns an integer being the
+        sum of the list elements (True being a value of 1 and False a value
+        of 0).
+        """
+        checked_results = []
+        for new_coordinate in new_coordinates:
+            for occupied_coordinate in occupied_coordinates:
+                if new_coordinate == occupied_coordinate:
+                    checked_results.append(True)
+                else:
+                    checked_results.append(False)
+        return sum(checked_results)
+
+
 class AircraftCarrier(Ship):
     """
     Subclass of Ship superclass. Sets the ship
