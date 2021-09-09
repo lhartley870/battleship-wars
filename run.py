@@ -169,3 +169,18 @@ class Cruiser(Ship, OccupiedCoordinatesMixin):
         of 3.
         """
         super().__init__(3)
+
+
+class Destroyer(Ship, OccupiedCoordinatesMixin):
+    """
+    Subclass of Ship superclass. Sets the ship
+    length of a destroyer to 2. Also inherits from
+    OccupiedCoordinatesMixin class.
+    """
+    def __init__(self):
+        """
+        Creates an instance of Destroyer subclass utilising the
+        superclass initialiser method and passing it a ship length
+        of 2.
+        """
+        super().__init__(2)
