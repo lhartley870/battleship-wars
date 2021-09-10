@@ -301,3 +301,14 @@ class Board(OccupiedCoordinatesMixin):
             else:
                 grid[row_coordinate][column_coordinate] = '0'
         return grid
+
+    def add_column_letters(self):
+        """
+        Replaces the column numbers along the top of the board with letters
+        in readiness for printing the board for the player to view.
+        """
+        grid = self.add_guess_results()
+        alphabet_dictionary = {i: chr(i + 64) for i in range(1, 11)}
+        for i in range(1, 11):
+            grid[0][i] = alphabet_dictionary[i]
+        return grid
