@@ -352,11 +352,16 @@ class Board(OccupiedCoordinatesMixin):
         sliced_double_number_row = double_number_row[3:]
         grid[10] = '10' + sliced_double_number_row
         """
-        The overall grid/board list is then looped through using a for loop
-        to print each list element as a line on the board for the player to
-        view.
+        A Board heading is printed to indicate if the board is the player's
+        board or the computer's board and the overall grid/board list is then
+        looped through using a for loop to print each list element as a line
+        on the board for the player to view.
         """
+        print(f"\n{self.name}'s Board\n")
         [print(string) for string in grid]
+        # Creates a line space underneath the computer board
+        if self.type == 'computer':
+            print('')
 
 
 def new_game():
