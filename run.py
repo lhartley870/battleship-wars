@@ -238,5 +238,16 @@ def create_ship_set():
     return occupied_coordinates
 
 
-x = create_ship_set()
-print(x)
+class Board(OccupiedCoordinatesMixin):
+    """
+
+    """
+    def __init__(self, type, name):
+        """
+
+        """
+        self.type = type
+        self.name = name
+        self.ships = create_ship_set()
+        self.guesses = []
+        self.hits_misses = []
