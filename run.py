@@ -283,8 +283,9 @@ class Board(OccupiedCoordinatesMixin):
         is represented by an 'S'.
         """
         grid = self.create_board()
-        for ship in self.ships:
-            grid[ship[0]][ship[1]] = 'S'
+        if self.type == 'player':
+            for ship in self.ships:
+                grid[ship[0]][ship[1]] = 'S'
         return grid
 
     def add_guess_results(self):
