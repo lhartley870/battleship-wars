@@ -249,6 +249,7 @@ class Board(OccupiedCoordinatesMixin):
         self.type = type
         self.name = name
         self.ships = create_ship_set()
+        print(self.ships)
         self.guesses = []
         self.hits_misses = []
 
@@ -275,4 +276,14 @@ class Board(OccupiedCoordinatesMixin):
             for cell in cells:
                 grid_row.append(cell)
             grid.append(grid_row)
+        return grid
+
+    def add_ships(self):
+        """
+        Adds the 5 ships to the board. Each board space occupied by a ship
+        is represented b an 'S'.
+        """
+        grid = self.create_board()
+        for ship in self.ships:
+            grid[ship[0]][ship[1]] = 'S'
         return grid
