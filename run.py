@@ -251,3 +251,28 @@ class Board(OccupiedCoordinatesMixin):
         self.ships = create_ship_set()
         self.guesses = []
         self.hits_misses = []
+
+    def create_board(self):
+        """
+        Creates a list with each nested list representing each row on
+        the board. Row 1 contains numbers 1 - 10 representing each column
+        on the board. Each subsequent row has a number as its first element
+        followed by 10 '.' elements to represent numbers 1 - 10 down the left
+        hand side of the board and each '.' representing an available space/
+        cell on the board.
+        """
+        grid = []
+        row_one = [column_number for column_number in range(1, 11)]
+        # Creates a space to add to the top left hand corner of the board
+        row_one.insert(0, ' ')
+        grid.append(row_one)
+        # Adds the row number and 10 '.' cells for each row on the board
+        cells = [cell for cell in range(10)]
+        for cell in cells:
+            cells[cell] = '.'
+        for row_number in range(1, 11):
+            grid_row = [row_number]
+            for cell in cells:
+                grid_row.append(cell)
+            grid.append(grid_row)
+        return grid
