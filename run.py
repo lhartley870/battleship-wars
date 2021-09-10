@@ -312,3 +312,40 @@ class Board(OccupiedCoordinatesMixin):
         for i in range(1, 11):
             grid[0][i] = alphabet_dictionary[i]
         return grid
+
+    def print_board(self):
+        """
+        Prints the board for the player to view.
+        """
+        grid = self.add_column_letters()
+        # Converts all items in the grid (the board) to strings
+        for row in range(11):
+            for item in range(11):
+                grid[row][item] = str(grid[row][item])
+        """
+        Takes each nested list of string elements within the overall grid
+        list, concatenates all the string elements within each nested list
+        with two spaces added between each element, deletes each nested list
+        and then replaces it with the concatenated string. The end result is
+        an overall grid/board list containing string elements; one string
+        element for each row of the board.
+        """
+        for row in range(11):
+            row_string = '  '.join(grid[row])
+            grid[row].clear
+            grid[row] = row_string
+        """
+        Row 10 has one more digit than the other single digit numbered rows
+        and so the alignment of the cells on the grid/board is wrong in row
+        10. To fix this, one space is removed between the '10' and the first
+        cell in the row to bring the cells back into alignment
+        """
+        double_number_row = grid[10]
+        sliced_double_number_row = double_number_row[3:]
+        grid[10] = '10' + sliced_double_number_row
+        """
+        The overall grid/board list is then looped through using a for loop
+        to print each list element as a line on the board for the player to
+        view.
+        """
+        [print(string) for string in grid]
