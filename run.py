@@ -357,3 +357,39 @@ class Board(OccupiedCoordinatesMixin):
         view.
         """
         [print(string) for string in grid]
+
+
+def new_game():
+    """
+    Starts a new game. Creates two instances of the Board class; one for
+    the player's board and one for the computer's board. Prints a personalised
+    welcome message, the rules of the game and the player's board and
+    computer's board to the terminal for the player to view.
+    """
+    # Requests the player's name from the player
+    player_name = input('What is your name?\n')
+    player_name = player_name.title()
+    computer_name = 'Computer'
+    player_board_type = 'player'
+    computer_board_type = 'computer'
+    # Creates an instance of the Board class for the player's board
+    player_board = Board(player_board_type, player_name)
+    # Creates an instance of the Board class for the computer's board
+    computer_board = Board(computer_board_type, computer_name)
+    # Prints a personalised welcome message and rules to the terminal
+    line_separator = '---------------------------------------'
+    print(f"\nWelcome, {player_name}, to Battleship Wars!")
+    print(line_separator)
+    print("You and the computer each have 5 ships to find:")
+    print("1 x 5 spaces, 1 x 4 spaces, 2 x 3 spaces and 1 x 2 spaces.")
+    print("Your ships are represented on your board with an 'S'.")
+    print("1 point will be scored for each hit, 0 points for a miss.")
+    print("The first player to hit all of the other player's ships and reach")
+    print("17 points wins the game!")
+    print(line_separator)
+    # Prints the player's board and computer's board to the terminal
+    player_board.print_board()
+    computer_board.print_board()
+
+
+new_game()
