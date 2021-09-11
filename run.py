@@ -475,6 +475,7 @@ def run_next_round():
     one round of the game
     """
     player_row_guess = get_player_row_guess()
+    player_column_guess = get_player_column_guess()
 
 
 run_next_round()
