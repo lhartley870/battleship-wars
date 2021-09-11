@@ -403,12 +403,14 @@ def get_player_row_guess():
     Runs a while loop to collect a row number from the player, which
     must be a number between 1 and 10. The loop will continue to request
     a row number until a valid number is provided.
+    Once a valid row number has been provided, the function returns the
+    string number as an integer.
     """
     while True:
-        player_row_guess = input("Enter a row between 1 and 10:\n")
+        player_row_guess = input("Enter a row number:\n")
         if validate_player_row_guess(player_row_guess):
             break
-    return player_row_guess
+    return int(player_row_guess)
 
 
 def validate_player_row_guess(value):
