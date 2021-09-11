@@ -397,4 +397,21 @@ def new_game():
     computer_board.print_board()
 
 
-new_game()
+def validate_player_row_guess(value):
+    """
+    Inside the try converts the player's row guess from a string into an
+    integer. Raises a ValueError if the string cannot be converted into
+    an integer or, if the string can be converted into an integer, if the
+    integer is not between 1 and 10 (inclusive). Returns True if no exceptions
+    are raised or otherwise False to feed back into the get_player_row_guess
+    function.
+    """
+    try:
+        rows = [x for x in range(1, 11)]
+        row_guess = int(value)
+        if row_guess not in rows:
+            raise ValueError('You must enter a row number between 1 and 10')
+    except ValueError as e:
+        print(f'Invalid data: {e}, try again')
+        return False
+    return True
