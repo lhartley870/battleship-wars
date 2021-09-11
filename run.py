@@ -397,6 +397,20 @@ def new_game():
     computer_board.print_board()
 
 
+def get_player_row_guess():
+    """
+    Gets a row guess from the player.
+    Runs a while loop to collect a row number from the player, which
+    must be a number between 1 and 10. The loop will continue to request
+    a row number until a valid number is provided.
+    """
+    while True:
+        player_row_guess = input("Enter a row between 1 and 10:\n")
+        if validate_player_row_guess(player_row_guess):
+            break
+    return player_row_guess
+
+
 def validate_player_row_guess(value):
     """
     Inside the try converts the player's row guess from a string into an
