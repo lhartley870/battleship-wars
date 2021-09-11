@@ -431,6 +431,25 @@ def validate_player_row_guess(value):
     return True
 
 
+def validate_player_column_guess(value):
+    """
+    Inside the try converts the player's column guess string to uppercase in
+    the event the player has entered a lowercase letter. Raises a ValueError
+    if the string does not match with an uppercase letter between A and J
+    (inclusive). Returns True if no exceptions are raised or otherwise False
+    to feed back into the get_player_column_guess function.
+    """
+    try:
+        columns = [chr(i + 64) for i in range(1, 11)]
+        column_guess = value.upper()
+        if column_guess not in columns:
+            raise ValueError
+    except ValueError:
+        print('You must enter a column letter between A and J')
+        return False
+    return True
+
+
 def run_next_round():
     """
     Collective function calling the necessary functions to work through
@@ -440,4 +459,4 @@ def run_next_round():
     print(player_row_guess)
 
 
-run_next_round()
+# run_next_round()
