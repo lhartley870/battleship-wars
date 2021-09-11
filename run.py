@@ -431,6 +431,23 @@ def validate_player_row_guess(value):
     return True
 
 
+def get_player_column_guess():
+    """
+    Gets a column guess from the player.
+    Runs a while loop to collect a column letter from the player, which
+    must be a letter between A and J. The loop will continue to request
+    a column letter until a valid letter is provided.
+    Once a valid column letter has been provided, the function returns an
+    uppercase version of the letter in case the player has inputted a
+    lowercase letter.
+    """
+    while True:
+        player_column_guess = input("Enter a column letter:\n")
+        if validate_player_column_guess(player_column_guess):
+            break
+    return player_column_guess.upper()
+
+
 def validate_player_column_guess(value):
     """
     Inside the try converts the player's column guess string to uppercase in
@@ -456,7 +473,6 @@ def run_next_round():
     one round of the game
     """
     player_row_guess = get_player_row_guess()
-    print(player_row_guess)
 
 
-# run_next_round()
+run_next_round()
