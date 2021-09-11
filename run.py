@@ -429,3 +429,15 @@ def validate_player_row_guess(value):
         print(f'Invalid data: {e}, try again')
         return False
     return True
+
+
+def run_next_round():
+    """
+    Collective function calling the necessary functions to work through
+    one round of the game
+    """
+    player_row_guess = get_player_row_guess()
+    print(player_row_guess)
+
+
+run_next_round()
