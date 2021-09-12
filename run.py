@@ -3,6 +3,8 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import random
 
+scores = {'Player': 0, 'Computer': 0}
+
 
 class Ship:
     """
@@ -554,6 +556,19 @@ def get_computer_guess():
     return computer_guess
 
 
+def update_scores(computer_board, player_board):
+    """
+    Updates the scores.
+    Adds 1 to 'Player' score if player's guess was a hit.
+    Adds 1 to 'Computer' score if computer's guess was a hit.
+    Nothing is added to the existing scores for a miss.
+    """
+    if computer_board.hits_misses[-1] == 'H':
+        scores['Player'] += 1
+    if player_board.hits_misses[-1] == 'H':
+        scores['Computer'] += 1
+
+
 def run_next_round(player_board, computer_board):
     """
     Collective function calling the necessary functions to work through
@@ -565,6 +580,7 @@ def run_next_round(player_board, computer_board):
     computer_guess = check_duplicate_answer(player_board)
     update_guesses_list(player_board, computer_guess)
     check_guess_result(player_board, computer_guess)
+    update_scores(computer_board, player_board)
 
 
 player_board, computer_board = new_game()
