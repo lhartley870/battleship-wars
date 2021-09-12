@@ -511,12 +511,22 @@ def validate_player_guess(list_value, computer_board):
     return True
 
 
+def update_guesses_list(board, guess):
+    """
+    Updates the list of guesses for the computer board with the player's
+    guess and updates the list of the guesses for the player_board with the
+    computer's guess.
+    """
+    board.guesses.append(guess)
+
+
 def run_next_round(player_board, computer_board):
     """
     Collective function calling the necessary functions to work through
-    one round of the game
+    one round of the game.
     """
     player_guess = check_duplicate_answer(computer_board)
+    update_guesses_list(computer_board, player_guess)
 
 
 player_board, computer_board = new_game()
