@@ -569,6 +569,48 @@ def update_scores(computer_board, player_board):
         scores['Computer'] += 1
 
 
+def print_results(computer_board, player_board):
+    """
+    Prints the round results to the terminal.
+    Gets the player and computer scores and the last player guess and
+    computer guess in the format [number, number]. Changes the second
+    number (column) to the corresponding board column letter and converts
+    the row number to a string. Concatenates the row and column strings to
+    create the board reference in the format 5F for both the last player
+    guess and last computer guess. Checks whether the last result in the
+    hits_misses list for each board is 'H' or not and creates a resulting
+    variable with the word 'Hit' or 'Miss' accordingly.
+    Prints the score, guess and hit/miss result for the player and the
+    computer to the terminal.
+    """
+    player_score = scores['Player']
+    computer_score = scores['Computer']
+    alphabet_dictionary = {i: chr(i + 64) for i in range(1, 11)}
+    player_guess_numbers = computer_board.guesses[-1]
+    player_guess_column = alphabet_dictionary[player_guess_numbers[1]]
+    player_guess = str(player_guess_numbers[0]) + player_guess_column
+    computer_guess_numbers = player_board.guesses[-1]
+    computer_guess_column = alphabet_dictionary[computer_guess_numbers[1]]
+    computer_guess = str(computer_guess_numbers[0]) + computer_guess_column
+    if player_board.hits_misses[-1] == 'H':
+        computer_result = 'Hit!'
+    else:
+        computer_result = 'Miss'
+    if computer_board.hits_misses[-1] == 'H':
+        player_result = 'Hit!'
+    else:
+        player_result = 'Miss'
+    print('---------------------------------------')
+    print('After the last round the scores are:')
+    print('Player:')
+    print(f'     Score - {player_score}')
+    print(f'     Guess - {player_guess}, {player_result}')
+    print('Computer:')
+    print(f'     Score - {computer_score}')
+    print(f'     Guess = {computer_guess}, {computer_result}')
+    print('---------------------------------------')
+
+
 def run_next_round(player_board, computer_board):
     """
     Collective function calling the necessary functions to work through
@@ -581,6 +623,7 @@ def run_next_round(player_board, computer_board):
     update_guesses_list(player_board, computer_guess)
     check_guess_result(player_board, computer_guess)
     update_scores(computer_board, player_board)
+    print_results(computer_board, player_board)
 
 
 player_board, computer_board = new_game()
