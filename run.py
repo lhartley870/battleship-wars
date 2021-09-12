@@ -533,6 +533,18 @@ def check_guess_result(board, guess):
         board.hits_misses.append('M')
 
 
+def get_computer_guess():
+    """
+    Generates a random row number between 1 and 10 and a random column
+    number between 1 and 10 and puts them in a list to represent the
+    computer's guess.
+    """
+    chosen_row = random.randrange(1, 11)
+    chosen_column = random.randrange(1, 11)
+    computer_guess = [chosen_row, chosen_column]
+    return computer_guess
+
+
 def run_next_round(player_board, computer_board):
     """
     Collective function calling the necessary functions to work through
