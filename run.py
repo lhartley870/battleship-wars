@@ -611,6 +611,40 @@ def print_results(computer_board, player_board):
     print('---------------------------------------')
 
 
+def check_continue():
+    """
+    Checks whether the user wants to continue.
+    Runs a while loop to ask the user whether they want to continue to the
+    next round or start a new game. The answer must either be a y (to
+    continue) or n (to start a new game). If the player provides an uppercase
+    Y or N this is converted into lowercase. The while loop will continue to
+    request an answer until a valid y or n is provided by the player.
+    """
+    while True:
+        continue_answer = input(
+                'Enter y to continue or n to start a new game\n')
+        continue_answer = continue_answer.lower()
+        if validate_continue(continue_answer):
+            break
+
+
+def validate_continue(answer):
+    """
+    Inside the try checks whether the player's answer is a y or n.
+    Raises a ValueError if the string does not match with a lowercase
+    y or n. Returns True if no exceptions are raised or otherwise False
+    to feed back into the check_continues function.
+    """
+    try:
+        valid_answer = ['y', 'n']
+        if answer not in valid_answer:
+            raise ValueError
+    except ValueError:
+        print('Only y or n are valid entries')
+        return False
+    return True
+
+
 def run_next_round(player_board, computer_board):
     """
     Collective function calling the necessary functions to work through
@@ -624,6 +658,7 @@ def run_next_round(player_board, computer_board):
     check_guess_result(player_board, computer_guess)
     update_scores(computer_board, player_board)
     print_results(computer_board, player_board)
+    check_continue()
 
 
 player_board, computer_board = new_game()
