@@ -520,6 +520,19 @@ def update_guesses_list(board, guess):
     board.guesses.append(guess)
 
 
+def check_guess_result(board, guess):
+    """
+    Checks whether the player/computer's guess is a hit or a miss and
+    updates the list of hits and misses for the computer_board (in the case
+    of a player's guess), or the player_board (in the case of the computer's
+    guess) with a 'H' for a hit or an 'M' for a miss.
+    """
+    if guess in board.ships:
+        board.hits_misses.append('H')
+    else:
+        board.hits_misses.append('M')
+
+
 def run_next_round(player_board, computer_board):
     """
     Collective function calling the necessary functions to work through
@@ -527,6 +540,7 @@ def run_next_round(player_board, computer_board):
     """
     player_guess = check_duplicate_answer(computer_board)
     update_guesses_list(computer_board, player_guess)
+    check_guess_result(computer_board, player_guess)
 
 
 player_board, computer_board = new_game()
