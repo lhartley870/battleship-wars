@@ -562,7 +562,9 @@ def run_next_round(player_board, computer_board):
     player_guess = check_duplicate_answer(computer_board)
     update_guesses_list(computer_board, player_guess)
     check_guess_result(computer_board, player_guess)
-    check_duplicate_answer(player_board)
+    computer_guess = check_duplicate_answer(player_board)
+    update_guesses_list(player_board, computer_guess)
+    check_guess_result(player_board, computer_guess)
 
 
 player_board, computer_board = new_game()
