@@ -473,7 +473,7 @@ def validate_player_column_guess(value):
 def check_duplicate_answer(board):
     """
     Calls the functions to get the player's or computer's guess.
-    If the player_board is passed as a parameter, this function runs the
+    If the computer_board is passed as an argument, this function runs the
     functions that obtain and validate the player's row and column guesses.
     The column guess is converted into a number as the column letters are
     there in a superficial capacity only to make guessing easier for the
@@ -482,6 +482,10 @@ def check_duplicate_answer(board):
     runs a while loop to check that the player has not already made the same
     guess. The loop will cause this function to continue to call itself until
     the player makes a guess that they have not already made before.
+    If the player_board is the argument, this function runs a while loop to
+    check that the computer has not already made the same guess. The loop will
+    cause this function to continue to call itself until the computer makes
+    a guess that it has not made before.
     """
     if board == computer_board:
         row = get_player_row_guess()
@@ -492,6 +496,11 @@ def check_duplicate_answer(board):
         while not validate_player_guess(player_answer, board):
             return check_duplicate_answer(board)
         return player_answer
+    else:
+        computer_answer = get_computer_guess()
+        while computer_answer in player_board.guesses:
+            return check_duplicate_answer(board)
+        return computer_answer
 
 
 def validate_player_guess(list_value, computer_board):
@@ -553,6 +562,7 @@ def run_next_round(player_board, computer_board):
     player_guess = check_duplicate_answer(computer_board)
     update_guesses_list(computer_board, player_guess)
     check_guess_result(computer_board, player_guess)
+    check_duplicate_answer(player_board)
 
 
 player_board, computer_board = new_game()
