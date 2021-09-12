@@ -395,6 +395,7 @@ def new_game():
     # Prints the player's board and computer's board to the terminal
     player_board.print_board()
     computer_board.print_board()
+    return player_board, computer_board
 
 
 def get_player_row_guess():
@@ -469,13 +470,54 @@ def validate_player_column_guess(value):
     return True
 
 
-def run_next_round():
+def check_duplicate_answer(board):
+    """
+    Calls the functions to get the player's or computer's guess.
+    If the player_board is passed as a parameter, this function runs the
+    functions that obtain and validate the player's row and column guesses.
+    The column guess is converted into a number as the column letters are
+    there in a superficial capacity only to make guessing easier for the
+    player but a column number is used to reference the applicable column
+    in the code. Puts the row number and column number into an array and
+    runs a while loop to check that the player has not already made the same
+    guess. The loop will cause this function to continue to call itself until
+    the player makes a guess that they have not already made before.
+    """
+    if board == player_board:
+        row = get_player_row_guess()
+        column = get_player_column_guess()
+        alphabet_dictionary = {chr(i + 64): i for i in range(1, 11)}
+        column_number = alphabet_dictionary[column]
+        player_answer = [row, column_number]
+        while not validate_player_guess(player_answer, board):
+            return check_duplicate_answer(board)
+        return player_answer
+
+
+def validate_player_guess(list_value, player_board):
+    """
+    Inside the try checks whether the list containing the player's row and
+    column guess is within the list of lists containing the player's previous
+    guesses. Raises a ValueError if the player's guess has been made before.
+    Returns True if no exceptions are raised or otherwise False to feed back
+    into the check_duplicate_answer function.
+    """
+    try:
+        if list_value in player_board.guesses:
+            raise ValueError
+    except ValueError:
+        print('You have already made this guess. Try another!')
+        return False
+    return True
+
+
+def run_next_round(player_board, computer_board):
     """
     Collective function calling the necessary functions to work through
     one round of the game
     """
-    player_row_guess = get_player_row_guess()
-    player_column_guess = get_player_column_guess()
+    check_duplicate_answer(player_board)
 
 
-run_next_round()
+player_board, computer_board = new_game()
+run_next_round(player_board, computer_board)
