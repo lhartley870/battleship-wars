@@ -483,7 +483,7 @@ def check_duplicate_answer(board):
     guess. The loop will cause this function to continue to call itself until
     the player makes a guess that they have not already made before.
     """
-    if board == player_board:
+    if board == computer_board:
         row = get_player_row_guess()
         column = get_player_column_guess()
         alphabet_dictionary = {chr(i + 64): i for i in range(1, 11)}
@@ -494,7 +494,7 @@ def check_duplicate_answer(board):
         return player_answer
 
 
-def validate_player_guess(list_value, player_board):
+def validate_player_guess(list_value, computer_board):
     """
     Inside the try checks whether the list containing the player's row and
     column guess is within the list of lists containing the player's previous
@@ -503,7 +503,7 @@ def validate_player_guess(list_value, player_board):
     into the check_duplicate_answer function.
     """
     try:
-        if list_value in player_board.guesses:
+        if list_value in computer_board.guesses:
             raise ValueError
     except ValueError:
         print('You have already made this guess. Try another!')
@@ -516,7 +516,7 @@ def run_next_round(player_board, computer_board):
     Collective function calling the necessary functions to work through
     one round of the game
     """
-    check_duplicate_answer(player_board)
+    player_guess = check_duplicate_answer(computer_board)
 
 
 player_board, computer_board = new_game()
