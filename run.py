@@ -570,7 +570,7 @@ def update_scores(computer_board, player_board):
         scores['Computer'] += 1
 
 
-def print_results(computer_board, player_board):
+def print_round_results(computer_board, player_board):
     """
     Prints the round results to the terminal.
     Gets the player and computer scores and the last player guess and
@@ -694,7 +694,7 @@ def run_next_round(player_board, computer_board):
     update_guesses_list(player_board, computer_guess)
     check_guess_result(player_board, computer_guess)
     update_scores(computer_board, player_board)
-    print_results(computer_board, player_board)
+    print_round_results(computer_board, player_board)
     is_game_over = check_game_over()
     if is_game_over:
         print_game_results(computer_board, player_board)
