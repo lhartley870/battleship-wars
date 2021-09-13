@@ -683,6 +683,22 @@ def validate_continue(answer):
     return True
 
 
+def process_continue(answer, computer_board, player_board):
+    """
+    Processes the player's decision to continue or exit the current game.
+    When the player was asked whether they wanted to continue the current
+    game or start a new game as part of the check_continue function, if
+    the player answered 'y' the updated computer and player boards are printed
+    and if the player answered 'n', the scores are cleared and the main
+    function is called to start a new game.
+    """
+    if answer == 'y':
+        print_updated_boards(computer_board, player_board)
+    else:
+        clear_scores()
+        main()
+
+
 def print_updated_boards(computer_board, player_board):
     """
     Prints an updated player board and computer board.
