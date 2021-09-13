@@ -142,9 +142,9 @@ def create_ship(occupied_coordinates):
 
 def create_ship_set():
     """
-    Creates one of each type of ship together with non-overlapping board
-    coordinates for each ship type and returns an overall list of all board
-    coordinates for all the ships.
+    Creates 5 ships together with non-overlapping board coordinates for each
+    ship and returns an overall list of all board coordinates for all the
+    ships.
     """
     aircraft_carrier = AircraftCarrier()
     aircraft_carrier_position = aircraft_carrier.get_board_positions()
