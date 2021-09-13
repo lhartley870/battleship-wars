@@ -663,6 +663,7 @@ def check_continue():
         continue_answer = continue_answer.lower()
         if validate_continue(continue_answer):
             break
+    return continue_answer
 
 
 def validate_continue(answer):
