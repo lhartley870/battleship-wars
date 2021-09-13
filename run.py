@@ -161,7 +161,7 @@ def create_ship_set():
     return occupied_coordinates
 
 
-class Board(OccupiedCoordinatesMixin):
+class Board:
     """
     Board class. Sets the board type (player or computer), the player's name,
     and the locations of the board's 5 ships. Also contains a list to store the
