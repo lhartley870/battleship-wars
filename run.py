@@ -119,14 +119,13 @@ class Ship:
 
 def create_ship_type(ship_subclass, occupied_coordinates):
     """
-    Creates an instance of the applicable Ship subclass and utilises
-    the Ship superclass get_board_positions method to generate the
-    ship instance's board coordinates. Utilises the OccupiedCoordinatesMixin
-    class method of check_occupied_coordinates to make sure that the
-    ship instance's board coordinates do not clash with those already taken
-    by another ship on the board. If the coordinates are already taken,
-    this function calls itself repeatedly until coordinates that do not
-    clash are obtained.
+    Creates an instance of the Ship class and utilises the class
+    get_board_positions method to generate the ship instance's board
+    coordinates. Utilises the class method of check_occupied_coordinates to
+    make sure that the ship instance's board coordinates do not clash with
+    those already taken by another ship on the board. If the coordinates
+    are already taken, this function calls itself repeatedly until coordinates
+    that do not clash are obtained.
     """
     unavailable_coordinates = occupied_coordinates
     ship_type = ship_subclass()
