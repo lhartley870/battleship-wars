@@ -612,6 +612,19 @@ def print_results(computer_board, player_board):
     print('---------------------------------------')
 
 
+def check_game_over():
+    """
+    Checks whether the current game is over.
+    If either the player or computer has hit all the battleships on the
+    other's board (i.e. if either the player or computer has reached a
+    score of 17), the function returns True, else it returns False.
+    """
+    if scores['Player'] == 4 or scores['Computer'] == 4:
+        return True
+    else:
+        return False
+
+
 def check_continue():
     """
     Checks whether the user wants to continue.
