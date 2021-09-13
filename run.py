@@ -699,6 +699,8 @@ def run_next_round(player_board, computer_board):
     is_game_over = check_game_over()
     if is_game_over:
         print_game_results(computer_board, player_board)
+    else:
+        proceed_next_round = check_continue()
 
 
 player_board, computer_board = new_game()
