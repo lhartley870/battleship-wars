@@ -374,6 +374,7 @@ def new_game():
     computer's board to the terminal for the player to view.
     """
     # Requests the player's name from the player
+    print('NEW GAME')
     player_name = input('What is your name?\n')
     player_name = player_name.title()
     computer_name = 'Computer'
