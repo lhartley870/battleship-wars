@@ -703,5 +703,16 @@ def run_next_round(player_board, computer_board):
         proceed_next_round = check_continue()
 
 
-player_board, computer_board = new_game()
-run_next_round(player_board, computer_board)
+def main():
+    """
+    Main function.
+    Creates a new game. Runs a while loop to keep running the next round
+    of the game until either the computer or player hits all the ships on
+    the other's board and reaches the maximum score of 17 (or there is a
+    draw of 17). Once a score of 17 is reached by either the player, the
+    computer or both, the scores are set back to 0 and the function calls
+    itself to start a new game all over again.
+    """
+    player_board, computer_board = new_game()
+    while scores['Player'] < 17 and scores['Computer'] < 17:
+        run_next_round(player_board, computer_board)
