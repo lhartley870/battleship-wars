@@ -619,7 +619,7 @@ def check_game_over():
     other's board (i.e. if either the player or computer has reached a
     score of 17), the function returns True, else it returns False.
     """
-    if scores['Player'] == 4 or scores['Computer'] == 4:
+    if scores['Player'] == 17 or scores['Computer'] == 17:
         return True
     else:
         return False
@@ -633,8 +633,8 @@ def print_game_results(computer_board, player_board):
     whether the game is a draw and prints confirmation to the terminal.
     Prints the final scores of the player and the computer to the terminal.
     """
-    player_wins = scores['Player'] == 4 and scores['Computer'] < 4
-    computer_wins = scores['Computer'] == 4 and scores['Player'] < 4
+    player_wins = scores['Player'] == 17 and scores['Computer'] < 17
+    computer_wins = scores['Computer'] == 17 and scores['Player'] < 17
     print('........GAME OVER........')
     if player_wins:
         print(f'{player_board.name.upper()} WINS!')
