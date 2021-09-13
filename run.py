@@ -736,6 +736,7 @@ def run_next_round(player_board, computer_board):
         print_game_results(computer_board, player_board)
     else:
         proceed_next_round = check_continue()
+        process_continue(proceed_next_round, computer_board, player_board)
 
 
 def main():
