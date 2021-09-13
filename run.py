@@ -683,6 +683,14 @@ def validate_continue(answer):
     return True
 
 
+def clear_scores():
+    """
+    Sets the scores back to 0.
+    """
+    scores['Player'] = 0
+    scores['Computer'] = 0
+
+
 def run_next_round(player_board, computer_board):
     """
     Collective function calling the necessary functions to work through
@@ -716,3 +724,4 @@ def main():
     player_board, computer_board = new_game()
     while scores['Player'] < 17 and scores['Computer'] < 17:
         run_next_round(player_board, computer_board)
+    clear_scores()
