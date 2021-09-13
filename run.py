@@ -8,15 +8,15 @@ scores = {'Player': 0, 'Computer': 0}
 
 class Ship:
     """
-    Ship superclass. Sets the ship length. Has methods culminating
+    Ship class. Sets the ship length. Has methods culminating
     in a final get_board_positions method which generates the board
     coordinates for the ship.
     """
-    def __init__(self, length):
+    def __init__(self):
         """
         Creates an instance of Ship with the instance attribute length.
         """
-        self.length = length
+        self.length = 2
 
     def get_ship_orientation(self):
         """
@@ -119,80 +119,6 @@ class OccupiedCoordinatesMixin:
                 else:
                     checked_results.append(False)
         return sum(checked_results)
-
-
-class AircraftCarrier(Ship):
-    """
-    Subclass of Ship superclass. Sets the ship
-    length of an aircraft carrier to 5.
-    """
-    def __init__(self):
-        """
-        Creates an instance of AircraftCarrier subclass utilising the
-        superclass initialiser method and passing it a ship length
-        of 5.
-        """
-        super().__init__(5)
-
-
-class Battleship(Ship, OccupiedCoordinatesMixin):
-    """
-    Subclass of Ship superclass. Sets the ship
-    length of a battleship to 4. Also inherits from
-    OccupiedCoordinatesMixin class.
-    """
-    def __init__(self):
-        """
-        Creates an instance of Battleship subclass utilising the
-        superclass initialiser method and passing it a ship length
-        of 4.
-        """
-        super().__init__(4)
-
-
-class Submarine(Ship, OccupiedCoordinatesMixin):
-    """
-    Subclass of Ship superclass. Sets the ship
-    length of a submarine to 3. Also inherits from
-    OccupiedCoordinatesMixin class.
-    """
-    def __init__(self):
-        """
-        Creates an instance of Submarine subclass utilising the
-        superclass initialiser method and passing it a ship length
-        of 3.
-        """
-        super().__init__(3)
-
-
-class Cruiser(Ship, OccupiedCoordinatesMixin):
-    """
-    Subclass of Ship superclass. Sets the ship
-    length of a cruiser to 3. Also inherits from
-    OccupiedCoordinatesMixin class.
-    """
-    def __init__(self):
-        """
-        Creates an instance of Cruiser subclass utilising the
-        superclass initialiser method and passing it a ship length
-        of 3.
-        """
-        super().__init__(3)
-
-
-class Destroyer(Ship, OccupiedCoordinatesMixin):
-    """
-    Subclass of Ship superclass. Sets the ship
-    length of a destroyer to 2. Also inherits from
-    OccupiedCoordinatesMixin class.
-    """
-    def __init__(self):
-        """
-        Creates an instance of Destroyer subclass utilising the
-        superclass initialiser method and passing it a ship length
-        of 2.
-        """
-        super().__init__(2)
 
 
 def create_ship_type(ship_subclass, occupied_coordinates):
