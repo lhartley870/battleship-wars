@@ -117,7 +117,7 @@ class Ship:
         return sum(checked_results)
 
 
-def create_ship_type(ship_subclass, occupied_coordinates):
+def create_ship(occupied_coordinates):
     """
     Creates an instance of the Ship class and utilises the class
     get_board_positions method to generate the ship instance's board
@@ -128,16 +128,16 @@ def create_ship_type(ship_subclass, occupied_coordinates):
     that do not clash are obtained.
     """
     unavailable_coordinates = occupied_coordinates
-    ship_type = ship_subclass()
-    ship_type_position = ship_type.get_board_positions()
-    position_clash_result = ship_type.check_occupied_coordinates(
-        occupied_coordinates, ship_type_position)
+    ship = Ship()
+    ship_position = ship.get_board_positions()
+    position_clash_result = ship.check_occupied_coordinates(
+        occupied_coordinates, ship_position)
     if position_clash_result > 0:
-        return create_ship_type(ship_subclass, occupied_coordinates)
+        return create_ship(occupied_coordinates)
     else:
-        for ship_type_coordinate in ship_type_position:
-            unavailable_coordinates.append(ship_type_coordinate)
-        return ship_type_position, unavailable_coordinates
+        for ship_coordinate in ship_position:
+            unavailable_coordinates.append(ship_coordinate)
+        return ship_position, unavailable_coordinates
 
 
 def create_ship_set():
