@@ -489,7 +489,7 @@ def check_duplicate_answer(board):
     cause this function to continue to call itself until the computer makes
     a guess that it has not made before.
     """
-    if board == computer_board:
+    if board.type == 'computer':
         row = get_player_row_guess()
         column = get_player_column_guess()
         alphabet_dictionary = {chr(i + 64): i for i in range(1, 11)}
@@ -500,7 +500,7 @@ def check_duplicate_answer(board):
         return player_answer
     else:
         computer_answer = get_computer_guess()
-        while computer_answer in player_board.guesses:
+        while computer_answer in board.guesses:
             return check_duplicate_answer(board)
         return computer_answer
 
