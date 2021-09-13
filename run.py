@@ -683,6 +683,17 @@ def validate_continue(answer):
     return True
 
 
+def print_updated_boards(computer_board, player_board):
+    """
+    Prints an updated player board and computer board.
+    Prints the player board showing the player's ships and all the computer's
+    hits and misses.
+    Prints the computer board showing all the player's hits and misses.
+    """
+    player_board.print_board()
+    computer_board.print_board()
+
+
 def clear_scores():
     """
     Sets the scores back to 0.
