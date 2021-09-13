@@ -753,3 +753,7 @@ def main():
     while scores['Player'] < 17 and scores['Computer'] < 17:
         run_next_round(player_board, computer_board)
     clear_scores()
+    return main()
+
+
+main()
