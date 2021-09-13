@@ -625,6 +625,29 @@ def check_game_over():
         return False
 
 
+def print_game_results(computer_board, player_board):
+    """
+    Prints the game results to the terminal.
+    Prints a message to inform the player that the game is over.
+    Checks whether the game has been won by the player or computer or
+    whether the game is a draw and prints confirmation to the terminal.
+    Prints the final scores of the player and the computer to the terminal.
+    """
+    player_wins = scores['Player'] == 4 and scores['Computer'] < 4
+    computer_wins = scores['Computer'] == 4 and scores['Player'] < 4
+    print('........GAME OVER........')
+    if player_wins:
+        print(f'{player_board.name.upper()} WINS!')
+    elif computer_wins:
+        print('COMPUTER WINS!')
+    else:
+        print("IT'S A DRAW!")
+    print('Final scores:')
+    print(f"     Player - {scores['Player']}")
+    print(f"     Computer - {scores['Computer']}")
+    print('---------------------------------------')
+
+
 def check_continue():
     """
     Checks whether the user wants to continue.
