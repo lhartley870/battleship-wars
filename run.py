@@ -672,7 +672,7 @@ def run_next_round(player_board, computer_board):
     check_guess_result(player_board, computer_guess)
     update_scores(computer_board, player_board)
     print_results(computer_board, player_board)
-    check_continue()
+    is_game_over = check_game_over()
 
 
 player_board, computer_board = new_game()
