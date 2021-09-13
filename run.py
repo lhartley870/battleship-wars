@@ -96,15 +96,11 @@ class Ship:
                 board_coordinates.append(board_coordinate)
         return board_coordinates
 
-
-class OccupiedCoordinatesMixin:
-    """
-    Mixin to check a list of new coordinates against a list
-    of occupied coordinates.
-    """
     def check_occupied_coordinates(
             self, occupied_coordinates, new_coordinates):
         """
+        Checks a list of new coordinates against a list of occupied
+        coordinates.
         For each new coordinate checked a True or False value
         is added to the checked_results list (True if there is a match
         and False if there is not). The method returns an integer being the
