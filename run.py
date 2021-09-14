@@ -432,7 +432,7 @@ def new_game():
     print("Your ships are represented on your board with an 'S'.")
     print("1 point will be scored for each hit, 0 points for a miss.")
     print("The first player to hit all of the other player's ships and reach")
-    print("17 points wins the game!")
+    print("10 points wins the game!")
     print(line_separator)
     # Prints the player's board and computer's board to the terminal
     player_board.print_board()
