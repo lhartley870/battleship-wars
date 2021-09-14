@@ -789,7 +789,7 @@ def main():
     itself to start a new game all over again.
     """
     player_board, computer_board = new_game()
-    while scores['Player'] < 17 and scores['Computer'] < 17:
+    while scores['Player'] < 10 and scores['Computer'] < 10:
         run_next_round(player_board, computer_board)
     clear_scores()
     return main()
