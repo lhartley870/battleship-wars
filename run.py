@@ -133,13 +133,9 @@ class Ship:
             [below_row, column_2],
             [below_row, right_column]
         ]
-        barrier_coordinates = []
-        for coordinate in barrier_row_above:
-            barrier_coordinates.append(coordinate)
-        for coordinate in barrier_same_row:
-            barrier_coordinates.append(coordinate)
-        for coordinate in barrier_row_below:
-            barrier_coordinates.append(coordinate)
+        barrier_coordinates = (barrier_row_above
+                               + barrier_same_row
+                               + barrier_row_below)
 
         return barrier_coordinates
 
@@ -174,13 +170,9 @@ class Ship:
             [row_2, right_column],
             [below_row, right_column]
         ]
-        barrier_coordinates = []
-        for coordinate in barrier_left_column:
-            barrier_coordinates.append(coordinate)
-        for coordinate in barrier_same_column:
-            barrier_coordinates.append(coordinate)
-        for coordinate in barrier_right_column:
-            barrier_coordinates.append(coordinate)
+        barrier_coordinates = (barrier_left_column
+                               + barrier_same_column
+                               + barrier_right_column)
 
         return barrier_coordinates
 
