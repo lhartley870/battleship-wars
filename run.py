@@ -217,9 +217,15 @@ def create_ship(occupied_coordinates):
     get_board_positions method to generate the ship instance's board
     coordinates. Utilises the class method of check_occupied_coordinates to
     make sure that the ship instance's board coordinates do not clash with
-    those already taken by another ship on the board. If the coordinates
-    are already taken, this function calls itself repeatedly until coordinates
-    that do not clash are obtained.
+    those already taken by another ship on the board or a barrier around
+    another ship on the board. If the coordinates are already taken, this
+    function calls itself repeatedly until coordinates that do not clash are
+    obtained. Once coordinates that do not clash are obtained, the ship's
+    barrier coordinates are obtained using the class method of
+    get_barrier_coordinates. The unavailable coordinates variable is
+    updated with the new ship's coordinates and its barrier coordinates.
+    The ship instance object and the updated unavailable coordinates are
+    returned.
     """
     unavailable_coordinates = occupied_coordinates
     ship = Ship()
