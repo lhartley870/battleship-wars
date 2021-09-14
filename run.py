@@ -602,6 +602,27 @@ def get_last_hit(player_board):
     return last_hit_coordinate
 
 
+def get_hit_surrounding_coordinates(player_board):
+    """
+    Gets a list of coordinates surrounding the computer's
+    last hit coordinate and returns the list.
+    """
+    last_hit_coordinate = get_last_hit(player_board)
+    row = last_hit_coordinate[0]
+    column = last_hit_coordinate[1]
+    hit_surrounding_coordinates = [
+        [row - 1, column - 1],
+        [row, column - 1],
+        [row + 1, column - 1],
+        [row - 1, column],
+        [row + 1, column],
+        [row - 1, column + 1],
+        [row, column + 1],
+        [row + 1, column + 1]
+    ]
+    return hit_surrounding_coordinates
+
+
 def get_computer_guess():
     """
     Generates a random row number between 1 and 10 and a random column
