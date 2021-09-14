@@ -98,6 +98,7 @@ class Ship:
                 board_coordinate.append(row_position)
                 board_coordinate.append(column)
                 board_coordinates.append(board_coordinate)
+        self.position = board_coordinates
         return board_coordinates
 
     def check_occupied_coordinates(
