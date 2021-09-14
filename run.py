@@ -654,9 +654,19 @@ def filter_surrounding_coordinates(player_board):
 
 def get_computer_guess(player_board):
     """
-    Generates a random row number between 1 and 10 and a random column
-    number between 1 and 10 and puts them in a list to represent the
-    computer's guess.
+    Controls the computer's guess.
+    Gets the number of computer hits on the player board hits_misses list.
+    If there are no hits or an even number of hits (i.e. no ships have
+    yet been hit or only whole ships have been hit), the computer selects
+    random coordinates.
+    If the number of computer hits on the player board is odd (i.e. the
+    computer has only hit half a ship), the filter_surrounding_coordinates
+    function is called to filter down the coordinates surrounding the
+    computer's last hit. The hit_surrounding_coords variable will be
+    narrowed down each time and the computer will select from that list
+    until the computer has hit the whole ship. This therefore enables the
+    computer to approach the game like a human would.
+    The function returns the computer's guess. 
     """
     num_computer_hits = player_board.hits_misses.count('H')
     if num_computer_hits % 2 == 0 or num_computer_hits == 0:
