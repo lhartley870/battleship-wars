@@ -101,6 +101,47 @@ class Ship:
         self.position = board_coordinates
         return board_coordinates
 
+    def horizontal_ship_barrier(self):
+        """
+        Gets the immediate board coordinates surrounding a horizontal ship.
+        Takes a ship's coordinates (ship length of 2 board spaces) and gets
+        the immediate surrounding coordinates in the row above, same row and
+        row below. Adds all those coordinates to a barrier_coordinates list
+        and returns the list.
+        """
+        row = self.position[0][0]
+        column_1 = self.position[0][1]
+        column_2 = self.position[1][1]
+        above_row = row + 1
+        below_row = row - 1
+        left_column = column_1 - 1
+        right_column = column_2 + 1
+        barrier_row_above = [
+            [above_row, left_column],
+            [above_row, column_1],
+            [above_row, column_2],
+            [above_row, right_column]
+        ]
+        barrier_same_row = [
+            [row, left_column],
+            [row, right_column]
+        ]
+        barrier_row_below = [
+            [below_row, left_column],
+            [below_row, column_1],
+            [below_row, column_2],
+            [below_row, right_column]
+        ]
+        barrier_coordinates = []
+        for coordinate in barrier_row_above:
+            barrier_coordinates.append(coordinate)
+        for coordinate in barrier_same_row:
+            barrier_coordinates.append(coordinate)
+        for coordinate in barrier_row_below:
+            barrier_coordinates.append(coordinate)
+
+        return barrier_coordinates
+
     def check_occupied_coordinates(
             self, occupied_coordinates, new_coordinates):
         """
