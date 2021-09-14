@@ -656,7 +656,7 @@ def check_game_over():
     Checks whether the current game is over.
     If either the player or computer has hit all the battleships on the
     other's board (i.e. if either the player or computer has reached a
-    score of 17), the function returns True, else it returns False.
+    score of 10), the function returns True, else it returns False.
     """
     if scores['Player'] == 10 or scores['Computer'] == 10:
         return True
