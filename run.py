@@ -658,7 +658,7 @@ def check_game_over():
     other's board (i.e. if either the player or computer has reached a
     score of 17), the function returns True, else it returns False.
     """
-    if scores['Player'] == 17 or scores['Computer'] == 17:
+    if scores['Player'] == 10 or scores['Computer'] == 10:
         return True
     else:
         return False
