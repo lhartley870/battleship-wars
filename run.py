@@ -19,6 +19,7 @@ class Ship:
         self.length = 2
         self.orientation = None
         self.position = None
+        self.barrier = None
 
     def get_ship_orientation(self):
         """
@@ -181,6 +182,20 @@ class Ship:
         for coordinate in barrier_right_column:
             barrier_coordinates.append(coordinate)
 
+        return barrier_coordinates
+
+    def get_barrier_coordinates(self):
+        """
+        Gets the coordinates immediately surrounding a ship depending
+        upon whether the ship is horizontally or vertically orientated.
+        Saves the surrounding coordinates to the ship's barrier instance
+        attribute and returns the coordinates.
+        """
+        if self.orientation == 'Horizontal':
+            barrier_coordinates = self.horizontal_ship_barrier()
+        else:
+            barrier_coordinates = self.vertical_ship_barrier()
+        self.barrier = barrier_coordinates
         return barrier_coordinates
 
     def check_occupied_coordinates(
