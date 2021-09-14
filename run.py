@@ -783,8 +783,8 @@ def main():
     Main function.
     Creates a new game. Runs a while loop to keep running the next round
     of the game until either the computer or player hits all the ships on
-    the other's board and reaches the maximum score of 17 (or there is a
-    draw of 17). Once a score of 17 is reached by either the player, the
+    the other's board and reaches the maximum score of 10 (or there is a
+    draw of 10). Once a score of 10 is reached by either the player, the
     computer or both, the scores are set back to 0 and the function calls
     itself to start a new game all over again.
     """
