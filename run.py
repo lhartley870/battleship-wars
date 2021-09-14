@@ -278,13 +278,11 @@ def create_ship_set():
 class Board:
     """
     Board class. Sets the board type (player or computer), the player's name,
-    and the locations of the board's 5 ships. Also contains a list to store the
-    guesses made in relation to the board and a list to store whether the
-    guesses are hits or misses. Has methods culminating in a final print_board
-    method which prints the board showing the other player's hits and misses
-    and (for the player's board only) the location of the 5 ships. Also
-    inherits from the OccupiedCoordinatesMixin class to allow comparisons
-    of board coordinates.
+    the locations of the board's 5 ships and each ship object. Also contains a
+    list to store the guesses made in relation to the board and a list to store
+    whether the guesses are hits or misses. Has methods culminating in a final
+    print_board method which prints the board showing the other player's hits
+    and misses and (for the player's board only) the location of the 5 ships.
     """
     def __init__(self, type, name):
         """
