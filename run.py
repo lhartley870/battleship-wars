@@ -242,9 +242,14 @@ def create_ship(occupied_coordinates):
 
 def create_ship_set():
     """
-    Creates 5 ships together with non-overlapping board coordinates for each
-    ship and returns an overall list of all board coordinates for all the
-    ships.
+    Creates a set of 5 ship objects and a list of their coordinates.
+    Creates ship_1, ship_1's coordinates and ship_1's barrier coordinates.
+    Adds the ship_1 coordinates and ship_1 barrier coordinates to create the
+    occupied_coordinates variable to pass to the create_ship function to create
+    a non-overlapping ship_2 object. Saves the ship_2 object returned from the
+    create_ship function and the updated occupied_coordinates to create ship_3.
+    This is repeated until all 5 ships are created. Creates a list of all 5
+    ships' coordinates and returns that list together with the 5 ship objects.
     """
     ship_1 = Ship()
     ship_1_position = ship_1.get_board_positions()
