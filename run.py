@@ -18,6 +18,7 @@ class Ship:
         """
         self.length = 2
         self.orientation = None
+        self.position = None
 
     def get_ship_orientation(self):
         """
@@ -680,4 +681,4 @@ def main():
     return main()
 
 
-# main()
+main()
