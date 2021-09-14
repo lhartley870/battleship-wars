@@ -539,7 +539,7 @@ def check_duplicate_answer(board):
             return check_duplicate_answer(board)
         return player_answer
     else:
-        computer_answer = get_computer_guess()
+        computer_answer = get_computer_guess(board)
         while computer_answer in board.guesses:
             return check_duplicate_answer(board)
         return computer_answer
