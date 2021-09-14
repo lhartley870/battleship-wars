@@ -652,15 +652,20 @@ def filter_surrounding_coordinates(player_board):
     return hit_surrounding_coordinates
 
 
-def get_computer_guess():
+def get_computer_guess(player_board):
     """
     Generates a random row number between 1 and 10 and a random column
     number between 1 and 10 and puts them in a list to represent the
     computer's guess.
     """
-    chosen_row = random.randrange(1, 11)
-    chosen_column = random.randrange(1, 11)
-    computer_guess = [chosen_row, chosen_column]
+    num_computer_hits = player_board.hits_misses.count('H')
+    if num_computer_hits % 2 == 0 or num_computer_hits == 0:
+        chosen_row = random.randrange(1, 11)
+        chosen_column = random.randrange(1, 11)
+        computer_guess = [chosen_row, chosen_column]
+    else:
+        hit_surrounding_coords = filter_surrounding_coordinates(player_board)
+        computer_guess = random.choice(hit_surrounding_coords)
     return computer_guess
 
 
