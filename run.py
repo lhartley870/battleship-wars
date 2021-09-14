@@ -292,7 +292,13 @@ class Board:
         """
         self.type = type
         self.name = name
-        self.ships = create_ship_set()
+        self.ship_data = create_ship_set()
+        self.ships = self.ship_data[5]
+        self.ship_1 = self.ship_data[0]
+        self.ship_2 = self.ship_data[1]
+        self.ship_3 = self.ship_data[2]
+        self.ship_4 = self.ship_data[3]
+        self.ship_5 = self.ship_data[4]
         self.guesses = []
         self.hits_misses = []
 
