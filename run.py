@@ -584,6 +584,24 @@ def check_guess_result(board, guess):
         board.hits_misses.append('M')
 
 
+def get_last_hit(player_board):
+    """
+    Gets the last computer guess coordinate that was a hit.
+    Gets the hits_misses list and the guesses list for the
+    player board, saves the lists as local variables, reverses
+    the lists and locates the index of the first 'H' for hit in
+    the reversed list. Finds the coordinate at the matching index
+    in the reversed guesses list and returns it.
+    """
+    hits_misses = player_board.hits_misses.copy()
+    hits_misses.reverse()
+    guesses = player_board.guesses.copy()
+    guesses.reverse()
+    last_hit_index = hits_misses.index('H')
+    last_hit_coordinate = guesses[last_hit_index]
+    return last_hit_coordinate
+
+
 def get_computer_guess():
     """
     Generates a random row number between 1 and 10 and a random column
