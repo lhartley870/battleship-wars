@@ -229,9 +229,9 @@ def create_ship(occupied_coordinates):
     if position_clash_result > 0:
         return create_ship(occupied_coordinates)
     else:
-        for ship_coordinate in ship_position:
-            unavailable_coordinates.append(ship_coordinate)
-        return ship_position, unavailable_coordinates
+        ship_barrier = ship.get_barrier_coordinates()
+        unavailable_coordinates += ship_position + ship_barrier
+        return ship, unavailable_coordinates
 
 
 def create_ship_set():
