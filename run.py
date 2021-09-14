@@ -623,6 +623,35 @@ def get_hit_surrounding_coordinates(player_board):
     return hit_surrounding_coordinates
 
 
+def filter_surrounding_coordinates(player_board):
+    """
+    Filters coordinates surrounding computer's last hit.
+    Obtains the coordinates surrounding the computer's last
+    hit and the list of all the computer's guesses made so far.
+    Creates a list of all the coordinates on the board.
+    Iterates through the surrounding coordinates and creates
+    an invalid_coords list of any of those coordinates that have
+    either already been guessed or are not on the board.
+    Iterates through the invalid_coords list and removes those
+    coordinates from the surrounding coordinates list. Returns
+    the surrounding coordinates list.
+    """
+    hit_surrounding_coordinates = get_hit_surrounding_coordinates(player_board)
+    guesses_made = player_board.guesses
+    all_board_coordinates = []
+    for x in range(1, 11):
+        for y in range(1, 11):
+            coordinate = [x, y]
+            all_board_coordinates.append(coordinate)
+    invalid_coords = []
+    for coord in hit_surrounding_coordinates:
+        if coord in guesses_made or coord not in all_board_coordinates:
+            invalid_coords.append(coord)
+    for coord in invalid_coords:
+        hit_surrounding_coordinates.remove(coord)
+    return hit_surrounding_coordinates
+
+
 def get_computer_guess():
     """
     Generates a random row number between 1 and 10 and a random column
