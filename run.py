@@ -247,6 +247,9 @@ def create_ship_set():
     ship_2_data = create_ship(occupied_coordinates)
     ship_2 = ship_2_data[0]
     occupied_coordinates = ship_2_data[1]
+    ship_3_data = create_ship(occupied_coordinates)
+    ship_3 = ship_3_data[0]
+    occupied_coordinates = ship_3_data[1]
 
 
 class Board:
