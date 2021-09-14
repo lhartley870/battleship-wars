@@ -672,8 +672,8 @@ def print_game_results(computer_board, player_board):
     whether the game is a draw and prints confirmation to the terminal.
     Prints the final scores of the player and the computer to the terminal.
     """
-    player_wins = scores['Player'] == 17 and scores['Computer'] < 17
-    computer_wins = scores['Computer'] == 17 and scores['Player'] < 17
+    player_wins = scores['Player'] == 10 and scores['Computer'] < 10
+    computer_wins = scores['Computer'] == 10 and scores['Player'] < 10
     print('........GAME OVER........')
     if player_wins:
         print(f'{player_board.name.upper()} WINS!')
