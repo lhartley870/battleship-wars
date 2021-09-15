@@ -151,20 +151,16 @@ class Ship:
         left_column = column - 1
         right_column = column + 1
         barrier_left_column = [
-            [above_row, left_column],
             [row_1, left_column],
-            [row_2, left_column],
-            [below_row, left_column]
+            [row_2, left_column]
         ]
         barrier_same_column = [
             [above_row, column],
             [below_row, column]
         ]
         barrier_right_column = [
-            [above_row, right_column],
             [row_1, right_column],
-            [row_2, right_column],
-            [below_row, right_column]
+            [row_2, right_column]
         ]
         barrier_coordinates = (barrier_left_column
                                + barrier_same_column
