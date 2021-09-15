@@ -118,20 +118,16 @@ class Ship:
         left_column = column_1 - 1
         right_column = column_2 + 1
         barrier_row_above = [
-            [above_row, left_column],
             [above_row, column_1],
-            [above_row, column_2],
-            [above_row, right_column]
+            [above_row, column_2]
         ]
         barrier_same_row = [
             [row, left_column],
             [row, right_column]
         ]
         barrier_row_below = [
-            [below_row, left_column],
             [below_row, column_1],
-            [below_row, column_2],
-            [below_row, right_column]
+            [below_row, column_2]
         ]
         barrier_coordinates = (barrier_row_above
                                + barrier_same_row
