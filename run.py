@@ -299,6 +299,7 @@ class Board:
         self.ship_5 = self.ship_data[4]
         self.guesses = []
         self.hits_misses = []
+        self.hit_barrier_coords = []
 
     def create_board(self):
         """
