@@ -12,7 +12,14 @@ The live project can be viewed [here]().
 Users of this application are typically going to be people who are searching for an exciting game experience.
 
 ### User Stories
-* 
+* As a user of the application, I want a personalised game experience. 
+* As a user of the application, I want to be reminded of the rules of the game.
+* As a user of the application, I want to easily be able to see at a glance where my ships are on my board and the locations where I or the computer have had a hit or a miss on the other's board.
+* As a user of the application, I don't want me accidentally entering a row number or column letter that is not on the board to crash the game.
+* As a user of the application, if I accidentally enter a coordinate that I've guessed before, I don't want that to 'use up' my guess for that round.
+* As a user of the application, I want to know my progress for each round of the game. 
+* As a user of the application, I want to be able to start a new game if I'm part way through an existing game.
+* As a user of the application, I want playing against the computer to be as close to playing against another human as possible.
 
 ## Flow Charts
 
