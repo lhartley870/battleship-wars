@@ -92,7 +92,9 @@ The player and computer continue to take turns making guesses until one player s
   Once a game is finished or the player opts to start a new game, the scores are cleared back to 0-0 and new ship and board instances are created to start the game afresh. 
 
 ### Further Feature Ideas
-* 
+* Allow the player to select the board size within a range of sizes
+* Allow the player to decide the number of ships on the boards
+* Have ships of different sizes
 
 ## Data Model
 
