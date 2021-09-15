@@ -423,9 +423,10 @@ def new_game():
     line_separator = '---------------------------------------'
     print(f"\nWelcome, {player_name}, to Battleship Wars!")
     print(line_separator)
-    print("You and the computer each have 5 ships to find:")
-    print("1 x 5 spaces, 1 x 4 spaces, 2 x 3 spaces and 1 x 2 spaces.")
+    print("You and the computer each have 5 ships to find, 2 spaces long")
     print("Your ships are represented on your board with an 'S'.")
+    print("Ships can be horizontal or vertical")
+    print("REMEMBER: No ships will be next to each other (except diagonally)")
     print("1 point will be scored for each hit, 0 points for a miss.")
     print("The first player to hit all of the other player's ships and reach")
     print("10 points wins the game!")
