@@ -639,6 +639,7 @@ def filter_surrounding_coordinates(player_board):
     """
     hit_surrounding_coordinates = get_hit_surrounding_coordinates(player_board)
     guesses_made = player_board.guesses
+    barrier_coordinates = player_board.hit_barrier_coords
     all_board_coordinates = []
     for x in range(1, 11):
         for y in range(1, 11):
@@ -646,7 +647,11 @@ def filter_surrounding_coordinates(player_board):
             all_board_coordinates.append(coordinate)
     invalid_coords = []
     for coord in hit_surrounding_coordinates:
-        if coord in guesses_made or coord not in all_board_coordinates:
+        coord_guessed = coord in guesses_made
+        coord_off_board = coord not in all_board_coordinates
+        coord_barrier = coord in barrier_coordinates
+        alternatives = coord_guessed or coord_off_board or coord_barrier
+        if alternatives:
             invalid_coords.append(coord)
     for coord in invalid_coords:
         hit_surrounding_coordinates.remove(coord)
