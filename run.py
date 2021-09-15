@@ -719,6 +719,16 @@ def add_surrounding_ship_coords(player_board):
         second_last_coord = list_guesses[second_last_hit]
         last_ship = [last_hit_coord, second_last_coord]
         last_ship.sort()
+        if last_ship == player_board.ship_1.position:
+            player_board.hit_barrier_coords += player_board.ship_1.barrier
+        elif last_ship == player_board.ship_2.position:
+            player_board.hit_barrier_coords += player_board.ship_2.barrier
+        elif last_ship == player_board.ship_3.position:
+            player_board.hit_barrier_coords += player_board.ship_3.barrier
+        elif last_ship == player_board.ship_4.position:
+            player_board.hit_barrier_coords += player_board.ship_4.barrier
+        else:
+            player_board.hit_barrier_coords += player_board.ship_5.barrier
 
 
 def print_round_results(computer_board, player_board):
