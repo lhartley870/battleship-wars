@@ -1,31 +1,66 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Battleship Wars
+ 
 
-Welcome lhartley870,
+The live project can be viewed [here](). 
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+![Responsive view of live website Home page](/readme-documents/screenshots/home-page-screenshot.png)
 
-## Reminders
+## UX (User Experience) 
+### Users
+Users of this application are typically going to be people who are searching for an exciting game experience.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+### User Stories
+* 
 
-## Creating the Heroku app
+## Flow Charts
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+I used [Lucidchart]() to create flow charts for the logic of my application, which can be found here: 
+* []()  
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## How to Play
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+## Features
+### Existing Features
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+### Further Feature Ideas
+* 
 
-Connect your GitHub repository and deploy as normal.
+## Data Model
 
-## Constraints
+## Technologies Used
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+### Languages 
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) programming language for the logic of the application.
 
------
-Happy coding!
+### Libraries, Resources and Programs
+* 
+
+## Testing
+
+Please see the separate [TESTING.md file](TESTING.md) for details of the project testing carried out. 
+
+## Deployment
+
+### Heroku
+
+This project was deployed to Heroku according to the following steps: 
+
+1. 
+
+![View of Heroku when application deployed]()
+
+## Credits 
+
+### Code
+
+* 
+      
+### Content
+
+* 
+
+### Acknowledgments
+
+Many thanks to:
+* My mentor, Gerard McBride, for his help and guidance.
+* The Code Institute tutors for their support. 
