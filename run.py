@@ -607,14 +607,10 @@ def get_hit_surrounding_coordinates(player_board):
     row = last_hit_coordinate[0]
     column = last_hit_coordinate[1]
     hit_surrounding_coordinates = [
-        [row - 1, column - 1],
-        [row, column - 1],
-        [row + 1, column - 1],
         [row - 1, column],
-        [row + 1, column],
-        [row - 1, column + 1],
         [row, column + 1],
-        [row + 1, column + 1]
+        [row + 1, column],
+        [row, column - 1]
     ]
     return hit_surrounding_coordinates
 
