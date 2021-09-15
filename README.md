@@ -47,6 +47,22 @@ The player and computer continue to take turns making guesses until one player s
 
   The player can see his/her own ships which are marked with a green 'S' on the player's board. The computer board does not print the location of the computer's ships. 
 
+* **Accepts User Input**
+  The user is able to enter a name at the beginning of a new game. This name is used in the game's welcome message, in the heading for the player's board e.g. 'Steve's Board' and in the message printed at the end of the game if the player has won e.g. 'STEVE WINS!' to personalise the player's experience. 
+
+  The player's board position guess is required for each round of the game. The player has to input a row between 1 and 10 (inclusive) and a column between A and J (inclusive) to select their guess. 
+
+  Once a round is completed the player has to enter a 'y' to continue the current game or can alternatively enter 'n' to start a new game.
+
+* **Input Validation and Error Checking**
+  The player is unable to enter a row guess that is not a number or is not a row number on the board (1-10 inclusive). If the player does make an invalid entry they will be prompted to enter a number between 1 and 10. 
+
+  The player is unable to enter a column guess that is not a column letter on the board (A-J inclusive). It does not matter if the column guess made by the player is lowercase or uppercase as the python code will convert it to uppercase. If the player tries to make a guess that is not a letter A-J they will be asked to make a guess between the letters A and J. Also, if the column guess is invalid, the user does not have to enter their guess all over again. Their valid row selection will remain so they will just need to enter a valid column letter. 
+
+  The player is unable to make the same board coordinate guess twice. All of the player's guesses are saved in a 'guesses' attribute for the player board instance of the Board class. When a player makes a guess, this is checked against the player's previous guesses and the player will be told that they have made that guess before and will be prompted to enter an alternative guess. 
+
+  The player is only able to enter a 'y' to continue to the next round of the current game or an 'n' to start a new game when asked whether they want to continue at the end of each round. It does not matter if the player enters a lowercase or uppercase 'y' or 'n' as the python code will convert it to lowercase. If the player makes any entry apart from an 'n' or a 'y' they will be informed and asked to make a valid entry. 
+
 ### Further Feature Ideas
 * 
 
