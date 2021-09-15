@@ -1,9 +1,5 @@
 import random
 
-import colorama
-from colorama import Fore
-colorama.init(autoreset=True)
-
 scores = {'Player': 0, 'Computer': 0}
 
 
@@ -327,7 +323,7 @@ class Board:
         grid = self.create_board()
         if self.type == 'player':
             for ship in self.ships:
-                grid[ship[0]][ship[1]] = Fore.GREEN + 'S' + Fore.RESET
+                grid[ship[0]][ship[1]] = 'S'
         return grid
 
     def add_guess_results(self):
@@ -340,11 +336,9 @@ class Board:
             row_coordinate = self.guesses[i][0]
             column_coordinate = self.guesses[i][1]
             if self.hits_misses[i] == 'H':
-                grid[row_coordinate][column_coordinate] = (Fore.RED +
-                                                           '*' + Fore.RESET)
+                grid[row_coordinate][column_coordinate] = '*'
             else:
-                grid[row_coordinate][column_coordinate] = (Fore.YELLOW +
-                                                           '0' + Fore.RESET)
+                grid[row_coordinate][column_coordinate] = '0'
         return grid
 
     def add_column_letters(self):
