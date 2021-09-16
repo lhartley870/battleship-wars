@@ -14,15 +14,23 @@ scores = {'Player': 0, 'Computer': 0}
 
 class Ship:
     """
-    Ship class. Sets the ship length. Has methods culminating
-    in a final get_board_positions method which generates the board
-    coordinates for the ship.
+    Ship class. Sets the ship length as a class attribute with a fixed value
+    of 2. Sets the ship instance attributes of orientation, position and
+    barrier as None as these attributes are reassigned values as the ship
+    instances' board coordinates and surrounding coordinates are created.
+    Has main methods get_board_positions, which generates the board
+    coordinates for each ship instance, get_barrier_coordinates, which
+    generates each ship instance's surrounding coordinates and
+    check_occupied_coordinates, which is used when creating the ship instances
+    in a set of 5 ships for a board, to ensure that no ship overlaps a ship
+    already created in the set or its surrounding coordinates.
     """
+    length = 2
+
     def __init__(self):
         """
         Creates an instance of Ship with the instance attribute length.
         """
-        self.length = 2
         self.orientation = None
         self.position = None
         self.barrier = None
