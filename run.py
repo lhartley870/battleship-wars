@@ -29,7 +29,7 @@ class Ship:
 
     def __init__(self):
         """
-        Creates an instance of Ship with the instance attribute length.
+        Creates an instance of the Ship class.
         """
         self.orientation = None
         self.position = None
