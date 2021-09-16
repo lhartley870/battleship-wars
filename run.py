@@ -392,6 +392,12 @@ class Board:
         in readiness for printing the board for the player to view.
         """
         grid = self._add_guess_results()
+        """
+        Code for creating the alphabet_dictionary was taken from an answer
+        given by user10084443 on this Stack Overflow post -
+        https://stackoverflow.com/questions/453576/is-there-a-fast-way-to-
+        generate-a-dict-of-the-alphabet-in-python
+        """
         alphabet_dictionary = {i: chr(i + 64) for i in range(1, 11)}
         for i in range(1, 11):
             grid[0][i] = alphabet_dictionary[i]
