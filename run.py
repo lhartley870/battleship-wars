@@ -365,7 +365,7 @@ class Board:
     def _add_guess_results(self):
         """
         Adds the results of the guesses to the board. A hit is represented
-        by a '*' and a miss is represented by a '0'.
+        by a red '*' and a miss is represented by a blue '0'.
         """
         grid = self._add_ships()
         for i in range(len(self.guesses)):
@@ -382,7 +382,7 @@ class Board:
                 grid[row_coordinate][column_coordinate] = (Fore.RED +
                                                            '*' + Fore.RESET)
             else:
-                grid[row_coordinate][column_coordinate] = (Fore.YELLOW +
+                grid[row_coordinate][column_coordinate] = (Fore.BLUE +
                                                            '0' + Fore.RESET)
         return grid
 
