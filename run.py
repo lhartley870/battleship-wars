@@ -154,9 +154,9 @@ class Ship:
             [below_row, column_1],
             [below_row, column_2]
         ]
-        barrier_coordinates = (barrier_row_above
-                               + barrier_same_row
-                               + barrier_row_below)
+        barrier_coordinates = (barrier_row_above +
+                               barrier_same_row +
+                               barrier_row_below)
 
         return barrier_coordinates
 
@@ -187,9 +187,9 @@ class Ship:
             [row_1, right_column],
             [row_2, right_column]
         ]
-        barrier_coordinates = (barrier_left_column
-                               + barrier_same_column
-                               + barrier_right_column)
+        barrier_coordinates = (barrier_left_column +
+                               barrier_same_column +
+                               barrier_right_column)
 
         return barrier_coordinates
 
@@ -285,11 +285,11 @@ def create_ship_set():
     occupied_coordinates = ship_4_data[1]
     ship_5_data = create_ship(occupied_coordinates)
     ship_5 = ship_5_data[0]
-    all_ship_coordinates = (ship_1.position
-                            + ship_2.position
-                            + ship_3.position
-                            + ship_4.position
-                            + ship_5.position)
+    all_ship_coordinates = (ship_1.position +
+                            ship_2.position +
+                            ship_3.position +
+                            ship_4.position +
+                            ship_5.position)
 
     return ship_1, ship_2, ship_3, ship_4, ship_5, all_ship_coordinates
 
