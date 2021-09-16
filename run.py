@@ -56,8 +56,11 @@ class Ship:
         Method to generate a board row and starting column number
         for horizontally oriented ships and a board column and starting
         row number for vertically oriented ships used by the
-        get_board_positions method.
-        Stores the orientation to the orientation instance attribute.
+        get_board_positions method. Ensures that the starting row and
+        column numbers will allow the ship of length 2 spaces to fit on
+        the board.
+        Stores the orientation as the ship's orientation instance property
+        value.
         """
         orientation = self._get_ship_orientation()
         self.orientation = orientation
@@ -80,11 +83,13 @@ class Ship:
 
     def get_board_positions(self):
         """
-        Method that uses the ship orientation, board row and starting column
-        for horizontally oriented ships and the ship orientation, board column
-        and starting row for vertically oriented ships returned by the
-        get_ship_position method, along with the ship's length, to generate
-        a list of board coordinates for the ship.
+        Method that uses the ship instance orientation property and either the
+        board row and starting column for horizontally oriented ships or the
+        board column and starting row for vertically oriented ships returned by
+        the get_ship_position method, along with the ship's length class
+        property, to generate a list of board coordinates for the ship.
+        Stores the ship's board coordinates as the ship's position instance
+        property value.
         """
         ship_position = self._get_ship_position()
         row, column = ship_position
