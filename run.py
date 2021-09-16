@@ -346,15 +346,15 @@ class Board:
 
     def _add_ships(self):
         """
-        Adds the 5 ships to the board. Each board space occupied by a ship
-        is represented by an 'S'.
+        Adds the 5 ships to the player's board only. Each board space
+        occupied by a ship is represented by a green 'S'.
         """
         grid = self._create_board()
         if self.type == 'player':
             for ship in self.ships:
                 """
                 Code for using the colorama module to colour the 'S'
-                symbols on the boards was taken from this youtube
+                symbols on the player board was taken from this youtube
                 video entitled 'How to Print Colored Text in Python (Colorama
                 Tutorial)' by Tech with Tim -
                 https://www.youtube.com/watch?v=u51Zjlnui4Y
