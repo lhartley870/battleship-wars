@@ -69,6 +69,12 @@ class Ship:
             row = self._get_board_row_or_column()
             starting_column = self._get_board_row_or_column()
             if (starting_column - 1) + self.length > 10:
+                """
+                Having to use return to make recursive functions work was a
+                bug solved by an answer given by roippi on this Stack Overflow
+                post - https://stackoverflow.com/questions/17778372/why-does-
+                my-recursive-function-return-none
+                """
                 return self._get_ship_position()
             else:
                 return row, starting_column
