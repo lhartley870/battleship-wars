@@ -57,11 +57,11 @@ The player and computer continue to take turns making guesses until one of them 
 
 * **Accepts User Input**
 
-  The user is able to enter a name at the beginning of a new game. This name is used in the game's welcome message, in the heading for the player's board e.g. 'Steve's Board' and in the message printed at the end of the game if the player has won e.g. 'STEVE WINS!' to personalise the player's experience. 
+  The user is able to enter a name at the beginning of a new game. This name is used in the game's welcome message, in the heading for the player's board e.g. 'Steve's Board' and in the message printed at the end of the game if the player has won e.g. 'STEVE WINS!', to personalise the player's experience. If the player does not enter a name, the word 'Player' is used instead.
 
   The player's board position guess is required for each round of the game. The player has to input a row between 1 and 10 (inclusive) and a column between A and J (inclusive) to select their guess. 
 
-  Once a round is completed the player has to enter a 'y' to continue the current game or can alternatively enter 'n' to start a new game.
+  Once a round is completed the player has to enter a 'y' to continue the current game or can alternatively enter an 'n' to start a new game.
 
 * **Input Validation and Error Checking**
 
