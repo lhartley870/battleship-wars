@@ -35,7 +35,7 @@ class Ship:
         self.position = None
         self.barrier = None
 
-    def get_ship_orientation(self):
+    def _get_ship_orientation(self):
         """
         Method to generate a random orientation of horizontal or
         vertical used by the get_ship_position method
@@ -43,7 +43,7 @@ class Ship:
         orientation = random.choice(('Horizontal', 'Vertical'))
         return orientation
 
-    def get_board_row_or_column(self):
+    def _get_board_row_or_column(self):
         """
         Method to generate a board row or column number
         used by the get_ship_position method.
@@ -51,7 +51,7 @@ class Ship:
         chosen_row_or_column = random.randrange(1, 11)
         return chosen_row_or_column
 
-    def get_ship_position(self):
+    def _get_ship_position(self):
         """
         Method to generate a board row and starting column number
         for horizontally oriented ships and a board column and starting
@@ -59,22 +59,22 @@ class Ship:
         get_board_positions method.
         Stores the orientation to the orientation instance attribute.
         """
-        orientation = self.get_ship_orientation()
+        orientation = self._get_ship_orientation()
         self.orientation = orientation
         # If statement applies where the ship is horizontally oriented.
         if orientation == 'Horizontal':
-            row = self.get_board_row_or_column()
-            starting_column = self.get_board_row_or_column()
+            row = self._get_board_row_or_column()
+            starting_column = self._get_board_row_or_column()
             if (starting_column - 1) + self.length > 10:
-                return self.get_ship_position()
+                return self._get_ship_position()
             else:
                 return row, starting_column
         # Else statement applies where the ship is vertically oriented.
         else:
-            column = self.get_board_row_or_column()
-            starting_row = self.get_board_row_or_column()
+            column = self._get_board_row_or_column()
+            starting_row = self._get_board_row_or_column()
             if (starting_row - 1) + self.length > 10:
-                return self.get_ship_position()
+                return self._get_ship_position()
             else:
                 return starting_row, column
 
@@ -86,7 +86,7 @@ class Ship:
         get_ship_position method, along with the ship's length, to generate
         a list of board coordinates for the ship.
         """
-        ship_position = self.get_ship_position()
+        ship_position = self._get_ship_position()
         row, column = ship_position
         board_coordinates = []
         # If statement applies where the ship is horizontally oriented.
@@ -116,7 +116,7 @@ class Ship:
         self.position = board_coordinates
         return board_coordinates
 
-    def horizontal_ship_barrier(self):
+    def _horizontal_ship_barrier(self):
         """
         Gets the immediate board coordinates surrounding a horizontal ship.
         Takes a ship's coordinates (ship length of 2 board spaces) and gets
@@ -149,7 +149,7 @@ class Ship:
 
         return barrier_coordinates
 
-    def vertical_ship_barrier(self):
+    def _vertical_ship_barrier(self):
         """
         Gets the immediate board coordinates surrounding a vertical ship.
         Takes a ship's coordinates (ship length of 2 board spaces) and gets
@@ -190,9 +190,9 @@ class Ship:
         attribute and returns the coordinates.
         """
         if self.orientation == 'Horizontal':
-            barrier_coordinates = self.horizontal_ship_barrier()
+            barrier_coordinates = self._horizontal_ship_barrier()
         else:
-            barrier_coordinates = self.vertical_ship_barrier()
+            barrier_coordinates = self._vertical_ship_barrier()
         self.barrier = barrier_coordinates
         return barrier_coordinates
 
