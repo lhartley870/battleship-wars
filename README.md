@@ -163,6 +163,7 @@ This project was deployed to Heroku according to the following steps:
 ### Content
 
 * The inventor of the original battleships pen and paper game.
+* This [Code Institute sample README file](https://github.com/Code-Institute-Solutions/SampleREADME) was used for guidance in preparing this README file and for the Deployment section as well as the Code Institute sample 'Ultimate Battleships' README file.
 
 ### Acknowledgments
 
