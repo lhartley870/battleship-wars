@@ -695,16 +695,19 @@ def get_hit_surrounding_coordinates(player_board):
 
 def filter_surrounding_coordinates(player_board):
     """
-    Filters coordinates surrounding computer's last hit.
+    Filters the coordinates surrounding the computer's last hit.
     Obtains the coordinates surrounding the computer's last
-    hit and the list of all the computer's guesses made so far.
-    Creates a list of all the coordinates on the board.
-    Iterates through the surrounding coordinates and creates
+    hit, the list of all the computer's guesses made so far and
+    the list of the coordinates surrounding any ships the computer
+    has already hit (barrier_coordinates). Creates a list of all
+    the coordinates on the board. Iterates through the surrounding
+    coordinates of the computer's last hit and creates
     an invalid_coords list of any of those coordinates that have
-    either already been guessed or are not on the board.
+    either already been guessed, are not on the board or are within
+    the barrier_coordinates list.
     Iterates through the invalid_coords list and removes those
-    coordinates from the surrounding coordinates list. Returns
-    the surrounding coordinates list.
+    coordinates from the surrounding coordinates list for the last hit.
+    Returns the surrounding coordinates list.
     """
     hit_surrounding_coordinates = get_hit_surrounding_coordinates(player_board)
     guesses_made = player_board.guesses
@@ -730,18 +733,18 @@ def filter_surrounding_coordinates(player_board):
 def get_computer_guess(player_board):
     """
     Controls the computer's guess.
-    Gets the number of computer hits on the player board hits_misses list.
-    If there are no hits or an even number of hits (i.e. no ships have
+    Gets the number of computer hits on the player board hits_misses property
+    list. If there are no hits or an even number of hits (i.e. no ships have
     yet been hit or only whole ships have been hit), the computer selects
     random coordinates.
     If the number of computer hits on the player board is odd (i.e. the
     computer has only hit half a ship), the filter_surrounding_coordinates
     function is called to filter down the coordinates surrounding the
     computer's last hit. The hit_surrounding_coords variable will be
-    narrowed down each time and the computer will select from that list
-    until the computer has hit the whole ship. This therefore enables the
-    computer to approach the game like a human would.
-    The function returns the computer's guess.
+    narrowed down each time a round of the game is run and the computer
+    will select from that list until the computer has hit the whole ship.
+    This therefore enables the computer to approach the game like a human
+    would. The function returns the computer's guess.
     """
     num_computer_hits = player_board.hits_misses.count('H')
     if num_computer_hits % 2 == 0 or num_computer_hits == 0:
