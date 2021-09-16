@@ -377,7 +377,7 @@ class Board:
     def _add_guess_results(self):
         """
         Adds the results of the guesses to the board. A hit is represented
-        by a red '*' and a miss is represented by a blue '0'.
+        by a red '*' and a miss is represented by a yellow '0'.
         """
         grid = self._add_ships()
         for i in range(len(self.guesses)):
