@@ -315,7 +315,7 @@ class Board:
         self.hits_misses = []
         self.hit_barrier_coords = []
 
-    def create_board(self):
+    def _create_board(self):
         """
         Creates a list with each nested list representing each row on
         the board. Row 1 contains numbers 1 - 10 representing each column
@@ -340,12 +340,12 @@ class Board:
             grid.append(grid_row)
         return grid
 
-    def add_ships(self):
+    def _add_ships(self):
         """
         Adds the 5 ships to the board. Each board space occupied by a ship
         is represented by an 'S'.
         """
-        grid = self.create_board()
+        grid = self._create_board()
         if self.type == 'player':
             for ship in self.ships:
                 """
@@ -358,12 +358,12 @@ class Board:
                 grid[ship[0]][ship[1]] = Fore.GREEN + 'S' + Fore.RESET
         return grid
 
-    def add_guess_results(self):
+    def _add_guess_results(self):
         """
         Adds the results of the guesses to the board. A hit is represented
         by a '*' and a miss is represented by a '0'.
         """
-        grid = self.add_ships()
+        grid = self._add_ships()
         for i in range(len(self.guesses)):
             row_coordinate = self.guesses[i][0]
             column_coordinate = self.guesses[i][1]
@@ -382,12 +382,12 @@ class Board:
                                                            '0' + Fore.RESET)
         return grid
 
-    def add_column_letters(self):
+    def _add_column_letters(self):
         """
         Replaces the column numbers along the top of the board with letters
         in readiness for printing the board for the player to view.
         """
-        grid = self.add_guess_results()
+        grid = self._add_guess_results()
         alphabet_dictionary = {i: chr(i + 64) for i in range(1, 11)}
         for i in range(1, 11):
             grid[0][i] = alphabet_dictionary[i]
@@ -397,7 +397,7 @@ class Board:
         """
         Prints the board for the player to view.
         """
-        grid = self.add_column_letters()
+        grid = self._add_column_letters()
         # Converts all items in the grid (the board) to strings
         for row in range(11):
             for item in range(11):
