@@ -125,9 +125,9 @@ class Ship:
         """
         Gets the immediate board coordinates surrounding a horizontal ship.
         Takes a ship's coordinates (ship length of 2 board spaces) and gets
-        the immediate surrounding coordinates in the row above, same row and
-        row below. Adds all those coordinates to a barrier_coordinates list
-        and returns the list.
+        the immediate surrounding coordinates in the row above, same row as
+        the ship and row below. Adds all those coordinates to a
+        barrier_coordinates list and returns the list.
         """
         row = self.position[0][0]
         column_1 = self.position[0][1]
@@ -191,11 +191,13 @@ class Ship:
         """
         Gets the coordinates immediately surrounding a ship depending
         upon whether the ship is horizontally or vertically orientated.
-        Saves the surrounding coordinates to the ship's barrier instance
-        attribute and returns the coordinates.
+        Saves the surrounding coordinates as the ship's barrier instance
+        property value and returns the coordinates.
         """
+        # If statement applies where the ship is horizontally oriented.
         if self.orientation == 'Horizontal':
             barrier_coordinates = self._horizontal_ship_barrier()
+        # Else statement applies where the ship is vertically oriented.
         else:
             barrier_coordinates = self._vertical_ship_barrier()
         self.barrier = barrier_coordinates
