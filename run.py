@@ -394,7 +394,7 @@ class Board:
                 grid[row_coordinate][column_coordinate] = (Fore.RED +
                                                            '*' + Fore.RESET)
             else:
-                grid[row_coordinate][column_coordinate] = (Fore.BLUE +
+                grid[row_coordinate][column_coordinate] = (Fore.YELLOW +
                                                            '0' + Fore.RESET)
         return grid
 
