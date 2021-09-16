@@ -87,9 +87,11 @@ The player and computer continue to take turns making guesses until one player s
   Once a game is finished or the player opts to start a new game, the scores are cleared back to 0-0 and new ship and board instances are created to start the game afresh. 
 
 ### Further Feature Ideas
-* Allow the player to select the board size within a range of sizes
-* Allow the player to decide the number of ships on the boards
-* Have ships of different sizes
+* Allow the player to select the board size within a range of sizes.
+* Allow the player to decide the number of ships on the boards.
+* Have ships of different sizes.
+* Allow the player to enter their row number and column letter guess in one entry instead of two separate entries for row and column.
+* Link the application to Google Sheets to record the number of guesses taken by a player when a player has won a game so that the application can report to the player on where they are on the leaderboard when they win a game. The lower the number of guesses taken to win, the higher the place on the leaderboard.
 
 ## Data Model
 The python code for this application includes two classes: the Ship class and the Board class. 
