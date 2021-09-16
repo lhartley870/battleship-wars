@@ -328,6 +328,12 @@ class Board:
         hand side of the board and each '.' representing an available space/
         cell on the board.
         """
+        """
+        The array-backed grid means of creating the boards was inspired by
+        point 8 (16.2.2 Populating the Grid) in this Program Arcade Games
+        with Python and Pygame, Chapter 16: Array-Backed Grids article at -
+        http://programarcadegames.com/index.php?lang=en&chapter=array_backed_grids
+        """
         grid = []
         row_one = [column_number for column_number in range(1, 11)]
         # Creates a space to add to the top left hand corner of the board
