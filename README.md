@@ -142,11 +142,68 @@ Please see the separate [TESTING.md file](TESTING.md) for details of the project
 
 ### Heroku
 
-This project was deployed to Heroku according to the following steps: 
+This project was deployed using Code Institute's mock terminal for Heroku. The project was deployed according to the following steps: 
 
-1. 
+1. Log into Heroku.
+2. From the Dashboard, Click on the 'New' button and then the dropdown button called 'Create new app'.
+![View of Heroku Dashboard](/readme-documents/deployment-screenshots/heroku-dashboard.png)
+3. Enter a unique App name and select your region as either 'Europe' or 'United States'. If the app name is unique you will get a green tick and a message saying that your chosen name is available, otherwise you will see a red exclamation mark and a message that the name is unavailable.
+![View of Create new app page](/readme-documents/deployment-screenshots/create-new-app.png)
+4. Click on 'Create app'.
+5. Click on 'Settings' in the bar across the top of the page. You will then be taken to a page that looks like this:
+![View of Settings page](/readme-documents/deployment-screenshots/app-settings.png)
+6. Scroll down to where it says 'Config Vars' down the left hand side of the page and click on 'Reveal Config Vars'.
+7. Enter 'PORT' in the field for 'Key' and '8000' in the field for 'Value' and click 'Add.
+![View of Config Vars section of Settings page](/readme-documents/deployment-screenshots/config-vars.png)
+8. Scroll down to where it says 'Buildpacks' down the left hand side of the page and click on 'Add buildpack'. 
+9. Select 'python' and click 'Save changes'. 
+10. Click on 'Add buildpack' again, select 'nodejs' and click 'Save changes'.
+11. The buildpacks must be in the order Python, NodeJs. If they are not you can drag and drop them to change the order. 
+12. Your screen should look like this:
+![View of Buildpacks section of Settings page](/readme-documents/deployment-screenshots/buildpacks.png)
+13. Scroll back up to the top of the screen and this time click on 'Deployment' in the bar across the top of the page. You will then be taken to a page that looks like this:
+![View of Deployment page](/readme-documents/deployment-screenshots/app-deployment.png)
+14. Where it says 'Deployment Method' on the left hand side of the screen clickon GitHub.
+15. Where it says 'Connect to GitHub' down the left hand side of the screen, type your repository name and click 'Search'.
+16. Click on 'Connect' next to your repository name
+![View of Connect to Github section of Deployment page](/readme-documents/deployment-screenshots/connect-to-github.png)
+17. Scroll down to where it says 'Automatic Deploys' and 'Manual Deploy' down the left hand side of the screen. 
+18. If you want Heroku to rebuild your app every time any new changes to the code are pushed to GitHub, check that the branch you want to deploy is correct and click on 'Enable Automatic Deploys'. You will then need to check that the branch you want to deploy is correct and click on 'Deploy Branch' in the Manual Deploy' section. When you have clicked on 'Enable Automatic Deploys' your screen will look like this:
+![View of Automatic Deploys enabled on Deployment page](/readme-documents/deployment-screenshots/auto-deploys-enabled.png)
+19. If you only want to manually deploy, check that the branch you want to deploy is correct and click on 'Deploy Branch' in the 'Manual Deploy' section.
+![View of Automatic Deploys and Manual Deploy sections of Deployment page](/readme-documents/deployment-screenshots/auto-manual-deploy.png)
+20. When your app has successfully deployed you will see a 'Your app was successfully deployed' message like this:
+![View of successful deployment on Deployment page](/readme-documents/deployment-screenshots/successful-deployment.png)
+21. Click on 'View' and you will be taken to the deployed application. 
 
-![View of Heroku when application deployed]()
+### Forking the GitHub Repository
+
+Forking the GitHub repository allows you to produce a personal copy of the original repository/someone else's project that you can amend without affecting the original repository. To do this:
+
+1. Log in to GitHub.
+2. Navigate to the repository that you want to fork. 
+3. In the repository header locate the button that says 'Fork' and click on it.  
+4. When the repository is copied you will be taken to your copy of the repository. 
+
+### Making a Local Clone
+
+In order to work on a repository you have forked, you will need to clone it to your computer. In order to do this: 
+
+1. Log in to GitHub and locate the repository fork you want to make a local clone of. 
+2. Underneath the Settings button at the top of the repository there is a button with a dropdown arrow that says 'Code'. Click on it.  
+3. To clone the repository using HTTPS, undeneath 'Clone' select 'HTTPS' so that there is an orange line underneath 'HTTPS'. Click on this button:
+
+![View of local clone button](/readme-documents/screenshots/local-clone-button.png)
+
+4. Open the Terminal in your IDE/editor. 
+5. Change the current working directory to the one where you want the cloned directory to be located.  
+6. Type 'git clone' and then paste the URL you copied earlier. It will look like this with your username instead of 'YOUR-USERNAME' and the name of the forked repository you are cloning instead of 'NAME OF REPOSITORY YOU ARE CLONING': 
+
+![View of terminal command to clone fork](/readme-documents/screenshots/clone-command.png)
+
+7. Press enter and your local clone will be created. 
+
+For more information on forking and cloning repositories, see [GitHub Docs](https://docs.github.com/en/get-started/quickstart/fork-a-repo) and this [GitHub Guide](https://guides.github.com/activities/forking/). 
 
 ## Credits 
 
@@ -163,7 +220,7 @@ This project was deployed to Heroku according to the following steps:
 ### Content
 
 * The inventor of the original battleships pen and paper game.
-* This [Code Institute sample README file](https://github.com/Code-Institute-Solutions/SampleREADME) was used for guidance in preparing this README file and for the Deployment section as well as the Code Institute sample 'Ultimate Battleships' README file.
+* This [Code Institute sample README file](https://github.com/Code-Institute-Solutions/SampleREADME) was used for guidance in preparing this README file and for the Deployment section as well as the Code Institute sample 'Ultimate Battleships' README file, this [GitHub Docs guide](https://docs.github.com/en/get-started/quickstart/fork-a-repo) and this [GitHub Guide](https://guides.github.com/activities/forking/). 
 
 ### Acknowledgments
 
