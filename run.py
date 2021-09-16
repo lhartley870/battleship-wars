@@ -297,10 +297,14 @@ class Board:
     surrounding coordinates of hit ships. Has a main print_board method which
     prints the board showing the other player's hits and misses and (for the
     player's board only) the location of the 5 ships.
+    The idea for using a Board class was taken from the Code Institute example
+    Battleships project.
     """
     def __init__(self, type, name):
         """
         Creates an instance of the Board class.
+        The idea for using type, name, ships and guesses as instance attributes
+        was taken from the Code Institute example Battleships project.
         """
         self.type = type
         self.name = name
