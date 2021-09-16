@@ -1,5 +1,10 @@
 import random
 
+"""
+Code for using the colorama module taken from this youtube video entitled
+'How to Print Colored Text in Python (Colorama Tutorial)' by Tech with
+Tim - https://www.youtube.com/watch?v=u51Zjlnui4Y
+"""
 import colorama
 from colorama import Fore
 colorama.init(autoreset=True)
@@ -327,6 +332,13 @@ class Board:
         grid = self.create_board()
         if self.type == 'player':
             for ship in self.ships:
+                """
+                Code for using the colorama module to colour the 'S'
+                symbols on the boards was taken from this youtube
+                video entitled 'How to Print Colored Text in Python (Colorama
+                Tutorial)' by Tech with Tim -
+                https://www.youtube.com/watch?v=u51Zjlnui4Y
+                """
                 grid[ship[0]][ship[1]] = Fore.GREEN + 'S' + Fore.RESET
         return grid
 
@@ -340,6 +352,13 @@ class Board:
             row_coordinate = self.guesses[i][0]
             column_coordinate = self.guesses[i][1]
             if self.hits_misses[i] == 'H':
+                """
+                Code for using the colorama module to colour the '*' and
+                '0' symbols on the boards was taken from this youtube
+                video entitled 'How to Print Colored Text in Python (Colorama
+                Tutorial)' by Tech with Tim -
+                https://www.youtube.com/watch?v=u51Zjlnui4Y
+                """
                 grid[row_coordinate][column_coordinate] = (Fore.RED +
                                                            '*' + Fore.RESET)
             else:
