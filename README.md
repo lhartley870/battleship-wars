@@ -23,7 +23,9 @@ Users of this application are typically going to be people who are searching for
 
 ## Flow Charts
 
-I used [Lucidchart](https://www.lucidchart.com/pages/) to create flow charts for the logic of my application. The main game logic flow chart can be found here: 
+I used [Lucidchart](https://www.lucidchart.com/pages/) to create flow charts for the logic of my application. 
+
+The main game logic flow chart can be found here: 
 * [Main Game Logic flow chart](/readme-documents/logic-flow-charts/game-logic-flow-chart.png)  
 
 Initially I had 5 ships of different sizes created using subclasses of the Ship class. The initial main game logic was just applied so that the computer would pick a random board guess each time, only filtering out its previous guesses. I ensured the main game logic functioned firstly and then amended the code to allow the computer to 'think' like a human whilst playing the game. To make the code work I made all the ships the same size and therefore removed the Ship subclasses. The logic for this second stage of my project is shown in this flow chart:
