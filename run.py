@@ -73,7 +73,7 @@ class Ship:
                 Having to use return to make recursive functions work was a
                 bug solved by an answer given by roippi on this Stack Overflow
                 post - https://stackoverflow.com/questions/17778372/why-does-
-                my-recursive-function-return-none
+                my-recursive-function-return-none.
                 """
                 return self._get_ship_position()
             else:
@@ -468,6 +468,9 @@ def new_game():
     # Requests the player's name from the player
     print('NEW GAME')
     player_name = input('What is your name?\n')
+    # If the player doesn't give a name, the game uses the name 'Player'
+    if player_name.strip() == '':
+        player_name = 'Player'
     player_name = player_name.title()
     computer_name = 'Computer'
     player_board_type = 'player'
