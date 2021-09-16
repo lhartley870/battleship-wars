@@ -46,14 +46,17 @@ The player and computer continue to take turns making guesses until one of them 
 ## Features
 ### Existing Features
 * **Board Rows and Columns**
+
   To make guessing coordinates easier for the player, the columns are given letters instead of numbers to differentiate them from the row numbers. This prevents the user from becoming confused between the row and column and accidentally making a guess they didn't intend which could be the case if both columns and rows were numbered. Behind the scenes, within the Python code logic, the letters are converted back into numbers to allow for easier processing of the data. 
 
 * **Random Ship Placement**
+
   When the player and computer boards are generated at the start of the game, 5 ships of 2 spaces long are placed at random on each board. Each ship is randomly placed either horizontally or vertically (not diagonally) on the board. Also, no two ships are next to each other horizontally or vertically. The python code is set up so that when the first ship in a set is created, its coordinates on the board and the immediate horizontal and vertical coordinates around the ship cannot be occupied by another ship. These occupied coordinates are updated as each ship in the set is created so that the next ship cannot occupy the spaces and surrounding coordinates of all the ships created before it in the set of 5. All the ship location coordinates are saved in an instance attribute of the applicable Board class instance so that the ships are printed to the same location during the game, every time the player's board is updated with guesses and re-printed. 
 
   The player can see his/her own ships which are marked with a green 'S' on the player's board. The computer board does not print the location of the computer's ships. 
 
 * **Accepts User Input**
+
   The user is able to enter a name at the beginning of a new game. This name is used in the game's welcome message, in the heading for the player's board e.g. 'Steve's Board' and in the message printed at the end of the game if the player has won e.g. 'STEVE WINS!' to personalise the player's experience. 
 
   The player's board position guess is required for each round of the game. The player has to input a row between 1 and 10 (inclusive) and a column between A and J (inclusive) to select their guess. 
@@ -61,6 +64,7 @@ The player and computer continue to take turns making guesses until one of them 
   Once a round is completed the player has to enter a 'y' to continue the current game or can alternatively enter 'n' to start a new game.
 
 * **Input Validation and Error Checking**
+
   The player is unable to enter a row guess that is not a number or is not a row number on the board (1-10 inclusive). If the player does make an invalid entry they will be prompted to enter a number between 1 and 10. 
 
   The player is unable to enter a column guess that is not a column letter on the board (A-J inclusive). It does not matter if the column guess made by the player is lowercase or uppercase as the python code will convert it to uppercase. If the player tries to make a guess that is not a letter A-J they will be asked to make a guess between the letters A and J. Also, if the column guess is invalid, the user does not have to enter their guess all over again. Their valid row selection will remain so they will just need to enter a valid column letter. 
@@ -70,15 +74,18 @@ The player and computer continue to take turns making guesses until one of them 
   The player is only able to enter a 'y' to continue to the next round of the current game or an 'n' to start a new game when asked whether they want to continue at the end of each round. It does not matter if the player enters a lowercase or uppercase 'y' or 'n' as the python code will convert it to lowercase. If the player makes any entry apart from an 'n' or a 'y' they will be informed and asked to make a valid entry. 
 
 * **Round Updates**
+
   At the end of each round, once the player and computer have made their guesses, the player is updated with the latest round and game score information. 
 
   The user is informed of the coordinates of their last guess e.g. 3J and whether this guess was a hit or a miss. The player is also informed of the coordinates of the computer's last guess and whether this guess was a hit or a miss. The player is also given the updated game scores for the player and computer. Printing out the last guess of the player is particularly useful to the player so that they can be reminded of their last guess before continuing to the next round and making a new guess. 
 
 * **Data Maintained in Class Instances**
+
   See the 'Data Model' section below. 
   
 
 * **Playing Against a 'Human' Computer**
+
   To make the game experience as close to playing another human as possible, the computer has been programmed to 'think' like a human in the python code. 
 
   The player is informed at the start of the game that ships cannot be placed next to each other either horizontally or vertically. 
@@ -90,6 +97,7 @@ The player and computer continue to take turns making guesses until one of them 
   Once the computer has hit the second half of the ship, the coordinates surrounding that ship are added to the hit barrier coordinates instance attribute list for the player board. When the computer makes any guesses in the future, these coordinates will also be filtered out so that the computer does not guess them. This gives the computer the same advantage as the player who has been told that ships cannot be placed next to each other either horizontally or vertically. 
 
 * **Scores Cleared for a New Game**
+
   Once a game is finished or the player opts to start a new game, the scores are cleared back to 0-0 and new ship and board instances are created to start the game afresh. 
 
 ### Further Feature Ideas
