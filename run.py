@@ -292,14 +292,15 @@ class Board:
     """
     Board class. Sets the board type (player or computer), the player's name,
     the locations of the board's 5 ships and each ship object. Also contains a
-    list to store the guesses made in relation to the board and a list to store
-    whether the guesses are hits or misses. Has methods culminating in a final
-    print_board method which prints the board showing the other player's hits
-    and misses and (for the player's board only) the location of the 5 ships.
+    list to store the guesses made in relation to the board, a list to store
+    whether the guesses made are hits or misses and a list to store the
+    surrounding coordinates of hit ships. Has a main print_board method which
+    prints the board showing the other player's hits and misses and (for the
+    player's board only) the location of the 5 ships.
     """
     def __init__(self, type, name):
         """
-        Creates an instance of Board
+        Creates an instance of the Board class.
         """
         self.type = type
         self.name = name
