@@ -3,9 +3,9 @@ Battleship Wars is a Python terminal game, which runs in the Code Institute mock
 
 The player plays against the computer to try and find all of the computer's battleships before the computer finds all of the player's ships. Each battleship is 2 spaces long on a board and is either placed horizontally or vertically at random. This game will be useful for battleships/game enthusiasts as the computer has been programmed to think like a human when the computer gets a hit, so making the experience as close to playing a real human as possible.  
 
-The live project can be viewed [here](). 
+The live project can be viewed [here](https://battleship-war.herokuapp.com/). 
 
-![Responsive view of live website Home page](/readme-documents/screenshots/home-page-screenshot.png)
+![Responsive view of live application](/readme-documents/application-screenshots/responsive-view.png)
 
 ## UX (User Experience) 
 ### Users
