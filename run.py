@@ -831,13 +831,21 @@ def print_round_results(computer_board, player_board):
     the row number to a string. Concatenates the row and column strings to
     create the board reference in the format 5F for both the last player
     guess and last computer guess. Checks whether the last result in the
-    hits_misses list for each board is 'H' or not and creates a resulting
-    variable with the word 'Hit' or 'Miss' accordingly.
+    hits_misses list for each board is a hit ('H') or not and creates a
+    resulting variable with the word 'Hit' or 'Miss' accordingly.
     Prints the score, guess and hit/miss result for the player and the
     computer to the terminal.
     """
+    # Gets the computer and player scores.
     player_score = scores['Player']
     computer_score = scores['Computer']
+    """
+    Code for creating the alphabet_dictionary was taken from an answer
+    given by user10084443 on this Stack Overflow post -
+    https://stackoverflow.com/questions/453576/is-there-a-fast-way-to-
+    generate-a-dict-of-the-alphabet-in-python
+    """
+    # Gets the last player and computer guesses in the format '5F'.
     alphabet_dictionary = {i: chr(i + 64) for i in range(1, 11)}
     player_guess_numbers = computer_board.guesses[-1]
     player_guess_column = alphabet_dictionary[player_guess_numbers[1]]
@@ -845,6 +853,7 @@ def print_round_results(computer_board, player_board):
     computer_guess_numbers = player_board.guesses[-1]
     computer_guess_column = alphabet_dictionary[computer_guess_numbers[1]]
     computer_guess = str(computer_guess_numbers[0]) + computer_guess_column
+    # Checks whether the last guesses were hits or misses.
     if player_board.hits_misses[-1] == 'H':
         computer_result = 'Hit!'
     else:
@@ -853,6 +862,7 @@ def print_round_results(computer_board, player_board):
         player_result = 'Hit!'
     else:
         player_result = 'Miss'
+    # Prints round results to the terminal.
     print('---------------------------------------')
     print('After the last round the scores are:')
     print('Player:')
