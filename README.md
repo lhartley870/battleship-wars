@@ -77,12 +77,11 @@ The player and computer continue to take turns making guesses until one of them 
 
   At the end of each round, once the player and computer have made their guesses, the player is updated with the latest round and game score information. 
 
-  The user is informed of the coordinates of their last guess e.g. 3J and whether this guess was a hit or a miss. The player is also informed of the coordinates of the computer's last guess and whether this guess was a hit or a miss. The player is also given the updated game scores for the player and computer. Printing out the last guess of the player is particularly useful to the player so that they can be reminded of their last guess before continuing to the next round and making a new guess. 
+  The user is informed of the coordinates of their last guess e.g. 3J and whether this guess was a hit or a miss. The player is also informed of the coordinates of the computer's last guess and whether this guess was a hit or a miss. The player is given the updated game scores for the player and computer. Printing out the last guess of the player is particularly useful to the player so that they can be reminded of their last guess before continuing to the next round and making a new guess. 
 
 * **Data Maintained in Class Instances**
 
   See the 'Data Model' section below. 
-  
 
 * **Playing Against a 'Human' Computer**
 
@@ -90,15 +89,17 @@ The player and computer continue to take turns making guesses until one of them 
 
   The player is informed at the start of the game that ships cannot be placed next to each other either horizontally or vertically. 
 
-  When the computer has no hits or has only hit complete ships, the computer's guess is generated at random, like a human's guess would be random. However, as with the player's guesses, any previous guesses made by the computer are filtered out so the computer cannot make the same guess twice. When a computer guess is randomly generated, the guess is programmed to be a guess that is a valid coordinate on the board and not a coordinate that sits outside the board. 
+  When the computer has no hits or has only hit complete ships, the computer's guess is generated at random, like a human's guess would be random. However, as with the player's guesses, any previous guesses made by the computer are filtered out so the computer cannot make the same guess twice. When a computer guess is randomly generated, the guess is programmed to be a guess that is a valid coordinate on the board and not a coordinate that sits outside the board. As explained in the last paragraph of this section, once the computer has hit the second half of a ship, the coordinates surrounding that ship are also filtered out so the computer cannot guess those coordinates in a future round of the game.
 
-  When the computer has hit only half of a ship (ie. has an odd score number such as 3 or 5), the 4 coordinates above, below, to the right and to the left of that hit coordinate are pulled up in a list. The list is then filtered to remove any coordinates that are not on the board e.g. a hit at 1A will have a surrounding coordinate of 0A for example which is not on the board, as well as previous guesses made by the computer. The computer then picks a coordinate at random from the filtered list and so will pick a coordinate horizontally or vertically next to the hit to try and hit the second half of the ship, just like a human would. As the rounds go on, the surrounding coordinates list is narrowed (by removing surrounding coordinates already guessed) until the computer hits the second half of the ship. 
+  When the computer has hit only half of a ship (ie. has an odd score number such as 3 or 5), the 4 coordinates above, below, to the right and to the left of that hit coordinate are pulled up in a list. The list is then filtered to remove any coordinates that are not on the board e.g. a hit at 1A will have a surrounding coordinate of 0A for example which is not on the board, as well as previous guesses made by the computer. As described below, once the computer has hit the second half of a ship, that ship's surrounding coordinates are also filtered out. The computer then picks a coordinate at random from the filtered list and so will pick a coordinate horizontally or vertically next to the hit to try and hit the second half of the ship, just like a human would. As the rounds go on, the surrounding coordinates list is narrowed (by removing surrounding coordinates already guessed) until the computer hits the second half of the ship. 
 
   Once the computer has hit the second half of the ship, the coordinates surrounding that ship are added to the hit barrier coordinates instance attribute list for the player board. When the computer makes any guesses in the future, these coordinates will also be filtered out so that the computer does not guess them. This gives the computer the same advantage as the player who has been told that ships cannot be placed next to each other either horizontally or vertically. 
 
+  The only advantage a human may have over the computer is that the computer has not been programmed to not guess single spaces that are surrounded by 'miss' spaces and so cannot possibly be occupied by part of a ship. 
+
 * **Scores Cleared for a New Game**
 
-  Once a game is finished or the player opts to start a new game, the scores are cleared back to 0-0 and new ship and board instances are created to start the game afresh. 
+  Once a game is finished or the player opts to start a new game, the scores are cleared back to 0-0 and new ship and board instances are created to start a new game afresh. 
 
 ### Further Feature Ideas
 * Allow the player to select the board size within a range of sizes.
