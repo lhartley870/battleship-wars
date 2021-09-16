@@ -559,6 +559,12 @@ def validate_player_column_guess(value):
     to feed back into the get_player_column_guess function.
     """
     try:
+        """
+        Code for creating the list of column letters was adapted from an answer
+        given by user10084443 on this Stack Overflow post -
+        https://stackoverflow.com/questions/453576/is-there-a-fast-way-to-
+        generate-a-dict-of-the-alphabet-in-python
+        """
         columns = [chr(i + 64) for i in range(1, 11)]
         column_guess = value.upper()
         if column_guess not in columns:
