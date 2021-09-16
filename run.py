@@ -531,6 +531,7 @@ def validate_player_row_guess(value):
         row_guess = int(value)
         if row_guess not in rows:
             raise ValueError('You must enter a row number between 1 and 10')
+    # Structure for except taken from Code Institute Love Sandwiches project.
     except ValueError as e:
         print(f'Invalid data: {e}, try again')
         return False
