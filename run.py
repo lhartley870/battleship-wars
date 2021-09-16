@@ -772,15 +772,16 @@ def update_scores(computer_board, player_board):
 
 def add_surrounding_ship_coords(player_board):
     """
-    Checks whether the computer has just hit cell 2 of a ship and,
-    if so, adds that ship's surrounding coordinates to the player
-    board's hit_barrier_coords list. That list is then utilised by
+    Checks whether the computer has just hit the second half of a
+    ship and, if so, adds that ship's surrounding coordinates to the player
+    board's hit_barrier_coords property list. That list is then utilised by
     other functions so that the computer will not select one of the
-    surrounding coordinates in its future guesses.
+    surrounding coordinates of the hit ship in its future guesses.
     This is intended to give the computer the same advantage as the
     human player who has been told in the game rules that no ships
-    will be horizontally or vertically next to each other.
+    will be horizontally or vertically placed next to each other.
     """
+    # Checks if the computer's last hit was the 2nd half of a ship
     last_guess_hit = player_board.hits_misses[-1] == 'H'
     more_one_hit = player_board.hits_misses.count('H') > 1
     even_num_hits = player_board.hits_misses.count('H') % 2 == 0
@@ -789,22 +790,34 @@ def add_surrounding_ship_coords(player_board):
         last_hit_coord = player_board.guesses[-1]
         list_hits_misses = player_board.hits_misses.copy()
         list_guesses = player_board.guesses.copy()
+        # Finds the coordinate of the 1st half of the hit ship
         list_hits_misses.reverse()
         list_guesses.reverse()
         list_hits_misses.pop(0)
         list_guesses.pop(0)
         second_last_hit = list_hits_misses.index('H')
         second_last_coord = list_guesses[second_last_hit]
+        # Puts both of the coordinates of the hit ship together
         last_ship = [last_hit_coord, second_last_coord]
         last_ship.sort()
+        """
+        Matches the hit ship with the correct ship object and adds that hit
+        ship's surrounding barrier coordinates to the player board's
+        hit_barrier_coords property list.
+        """
+        # Ship 1
         if last_ship == player_board.ship_1.position:
             player_board.hit_barrier_coords += player_board.ship_1.barrier
+        # Ship 2
         elif last_ship == player_board.ship_2.position:
             player_board.hit_barrier_coords += player_board.ship_2.barrier
+        # Ship 3
         elif last_ship == player_board.ship_3.position:
             player_board.hit_barrier_coords += player_board.ship_3.barrier
+        # Ship 4
         elif last_ship == player_board.ship_4.position:
             player_board.hit_barrier_coords += player_board.ship_4.barrier
+        # Ship 5
         else:
             player_board.hit_barrier_coords += player_board.ship_5.barrier
 
