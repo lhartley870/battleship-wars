@@ -92,6 +92,7 @@ The player and computer continue to take turns making guesses until one player s
 * Have ships of different sizes.
 * Allow the player to enter their row number and column letter guess in one entry instead of two separate entries for row and column.
 * Link the application to Google Sheets to record the number of guesses taken by a player when a player has won a game so that the application can report to the player on where they are on the leaderboard when they win a game. The lower the number of guesses taken to win, the higher the place on the leaderboard.
+* Programming additional computer logic so that the computer will not guess spaces that do not have an unguessed space next to them and so cannot be part of a ship. 
 
 ## Data Model
 The python code for this application includes two classes: the Ship class and the Board class. 
