@@ -912,7 +912,7 @@ def print_game_results(computer_board, player_board):
 
 def check_continue():
     """
-    Checks whether the user wants to continue.
+    Checks whether the user wants to continue the current game.
     Runs a while loop to ask the user whether they want to continue to the
     next round or start a new game. The answer must either be a y (to
     continue) or n (to start a new game). If the player provides an uppercase
@@ -933,7 +933,7 @@ def validate_continue(answer):
     Inside the try checks whether the player's answer is a y or n.
     Raises a ValueError if the string does not match with a lowercase
     y or n. Returns True if no exceptions are raised or otherwise False
-    to feed back into the check_continues function.
+    to feed back into the check_continue function.
     """
     try:
         valid_answer = ['y', 'n']
