@@ -622,7 +622,7 @@ def check_duplicate_answer(board):
 def validate_player_guess(list_value, computer_board):
     """
     Inside the try checks whether the list containing the player's row and
-    column guess is within the list of lists containing the player's previous
+    column guess is within the list containing the player's previous
     guesses. Raises a ValueError if the player's guess has been made before.
     Returns True if no exceptions are raised or otherwise False to feed back
     into the check_duplicate_answer function.
