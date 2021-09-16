@@ -588,13 +588,21 @@ def check_duplicate_answer(board):
     guess. The loop will cause this function to continue to call itself until
     the player makes a guess that they have not already made before.
     If the player_board is the argument, this function runs a while loop to
-    check that the computer has not already made the same guess. The loop will
-    cause this function to continue to call itself until the computer makes
-    a guess that it has not made before.
+    check that the computer has not already made the same guess and that the
+    guess is also not within the list of surrounding coordinates for hit
+    ships. The loop will cause this function to continue to call itself until
+    the computer makes a guess that it has not made before and that is not
+    in the list of surrounding coordinates for hit ships.
     """
     if board.type == 'computer':
         row = get_player_row_guess()
         column = get_player_column_guess()
+        """
+        Code for creating the alphabet_dictionary was taken from an answer
+        given by user10084443 on this Stack Overflow post -
+        https://stackoverflow.com/questions/453576/is-there-a-fast-way-to-
+        generate-a-dict-of-the-alphabet-in-python
+        """
         alphabet_dictionary = {chr(i + 64): i for i in range(1, 11)}
         column_number = alphabet_dictionary[column]
         player_answer = [row, column_number]
