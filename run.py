@@ -507,6 +507,10 @@ def get_player_row_guess():
     string number as an integer.
     """
     while True:
+        """
+        While loop structure for validation taken from the Code Institute
+        Love Sandwiches project.
+        """
         player_row_guess = input("Enter a row number:\n")
         if validate_player_row_guess(player_row_guess):
             break
@@ -544,6 +548,10 @@ def get_player_column_guess():
     lowercase letter.
     """
     while True:
+        """
+        While loop structure for validation taken from the Code Institute
+        Love Sandwiches project.
+        """
         player_column_guess = input("Enter a column letter:\n")
         if validate_player_column_guess(player_column_guess):
             break
