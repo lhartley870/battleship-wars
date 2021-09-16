@@ -9,53 +9,85 @@ Initially when the project was run through the validator the following errors we
 * These were all errors for the same issue and stated the issue to be *'line break before binary operator'*. This was resolved by moving the applicable lines breaks to after the binary operators, in all cases the binary operator being a '+'.    
 
 ## UX (User Experience) Stories Testing
-1. 
+1. As a user of the application, I want a personalised game experience. 
 
-    ![Responsive view of live application](/readme-documents/application-screenshots/.png)
+    ![View of name entry prompt in live application](/readme-documents/application-screenshots/name-entry.png)
 
-    *   
-
-2. 
-
-    ![Responsive view of live application](/readme-documents/application-screenshots/.png)
-
-    * 
-
-3.  
-
-    ![Responsive view of live application](/readme-documents/application-screenshots/.png)
+    * The user has the option to enter their name at the start of a new game. If the player enters nothing then the name 'Player' is assigned to them instead. 
+    * The player's name appears in the welcome message:
     
-    * 
+    ![View of welcome message in live application](/readme-documents/application-screenshots/welcome-message.png)
 
-4. 
+    as a heading to the player' board throughout the game:
 
-    ![Responsive view of live application](/readme-documents/application-screenshots/.png)
+    ![View of player board in live application](/readme-documents/application-screenshots/player-board.png)
 
-    *  
+    and in the game over message if the player has won the game:
 
-5. 
+    ![View of player wins message in live application](/readme-documents/application-screenshots/player-wins.png)
 
-    ![Responsive view of live application](/readme-documents/application-screenshots/.png)
+    * This personalises the player's game experience, helping to draw the player in and make them feel a part of the game.    
 
-    * 
+2. As a user of the application, I want to be reminded of the rules of the game.
 
-6. 
+    * As soon as the player enters their name when a new game starts, a welcome message including the rules of the game is printed to the terminal (as shown in User Story 1 above). 
+    * The rules are succinct and each point is set out on a new line to make it easier for the player to read.
+    * The player is informed of the number of ships and how many spaces long they are, that ships can be horizontal or vertical, that the ships are shown on the player's board with an 'S', that one point is awarded for a hit and that the first player to win 10 points wins the game.
+    * Importantly the player is given a reminder that ships cannot be next to each other either horizontally or vertically on the board. This is highlighted with 'REMEMBER' in capital letters. This is important as the python code programs the computer to not guess any spaces horizontally or vertically next to a hit ship so the player must be informed of this to ensure that they have the same advantage as the computer.
+    * It is important for the player to be informed of the rules of the game so they are clear on what they need to do to win and to assist with their strategy in trying to win. This information is required before the game begins and so is printed above the boards.
 
-    ![Responsive view of live application](/readme-documents/application-screenshots/.png)
+3. As a user of the application, I want to easily be able to see at a glance where my ships are on my board and the locations where I or the computer have had a hit or a miss on the other's board.
 
-    * 
+    ![View of player board in live application](/readme-documents/application-screenshots/player-board.png)
+    ![View of computer board in live application](/readme-documents/application-screenshots/player-board.png)
+    
+    * Although the symbols for ship (S), a hit (*) and a miss (0) are different, having completely white boards makes the current game status more and more difficult to easily see as the game goes on.
+    * The use of the colour yellow to show misses, red to show hits and green to show the ships, enables the player to easily and quickly see the current state of play after each round.
+    * This helps to keep the user engaged with the game, as otherwise they may lose interest if the board becomes too difficult to interpret at a glance. They can easily count the hits at a glance and see how many ships they have left to hit.
 
-7. 
+4. As a user of the application, I don't want me accidentally entering a row number or column letter that is not on the board to crash the game.
 
-    ![Responsive view of live application](/readme-documents/application-screenshots/.png)
+    ![View of wrong row entries in live application](/readme-documents/application-screenshots/wrong-row-entry.png)
+
+    * As shown in the screenshot, if the player accidentally enters a symbol, a letter or nothing for their row entry they will simply receive an invalid data message and be prompted to enter a row number again. 
+    * If the player enters a row number that is not between 1 and 10 (inclusive), they will receive a message informing them that they must enter a row number between 1 and 10 and they will be prompted to enter a row number again.
+
+    ![View of wrong column entries in live application](/readme-documents/application-screenshots/wrong-column-entry.png)
+    * As shown in the screenshot above, if the player accidentally enters a symbol, a number, nothing or a letter that is not within A to J (inclusive) as the column letter, they will receive a message informing them that they must enter a collumn letter between A and J. It does not matter if the user enters an uppercase or lowercase letter as the code will automatically convert the entry to uppercase. If the user has a valid row entry but an invalid column entry, the user will only be asked to enter another column entry, not their entire guess.
+
+    * The entering of an incorrect row number entry or column letter entry does not therefore crash the game, enabling the user to be confident that if they make a mistake, they can continue with the game.
+
+5. As a user of the application, if I accidentally enter a coordinate that I've guessed before, I don't want that to 'use up' my guess for that round.
+
+    ![View of same guess message in live application](/readme-documents/application-screenshots/same-guess.png)
+
+    * If the user tries to enter a guess that they have already entered, a message will be displayed informing the player that they have already made this guess and asking them to try another.
+    * The player will therefore not 'lose' their guess for the round, minimising user frustration and helping to keep user interest.
+
+6. As a user of the application, I want to know my progress for each round of the game.
+
+    ![View of round results in live application](/readme-documents/application-screenshots/round-results.png)
+
+    * When the player and computer have both completed their guesses for the round, the user will receive a round results summary. This is surrounded by dashed lines above and below the message to clearly separate it from the other messages and data in the terminal. 
+    * The user is informed of the player and computer's scores, the last board coordinate guesses made by the player and computer and whether those guesses were hits or misses. 
+    * This information at the end of each round keeps the user motivated and interested in the game and the re-printing of the user's last guess, helps to inform their next guess without having to look at the computer board.
+    * Additionally, when the game is over the player is given the final scores to see how much they won or lost by. This encourages the user to keep playing. 
+
+7. As a user of the application, I want to be able to start a new game if I'm part way through an existing game.
+
+    ![View of starting a new game in live application](/readme-documents/application-screenshots/start-new-game.png)
  
-    * 
+    * After each round the user is asked to enter y to continue the current game or n to start a new game.
+    * If the player wants to start a new game e.g. if they are losing, they simply have to enter an n. It does not matter if they enter a lowercase or uppercase n as the python code will automatically convert the entry to lowercase to be processed by the code logic.
+    * This allows the player the freedom to start a new game after each round without having to restart the application.
 
-8.  
+8. As a user of the application, I want playing against the computer to be as close to playing against another human as possible.
 
-    ![Responsive view of live application](/readme-documents/application-screenshots/.png)
+    ![View of player board in live application](/readme-documents/application-screenshots/player-board.png)
     
-    * 
+    * It may not be obvious to a player but the python code has been written so that the computer is aware that two ships cannot be placed next to each other. Once a full ship has been hit, its surrounding coordinates horizontally and vertically are filtered out of the computer's future guesses. This means that, in this respect, the computer has the same advantage as the human, and makes the game for the player more like playing against a real human. 
+    * Additionally, once the computer has hit half of a ship, the computer will try the coordinate above, below, to the right and to the left of the hit coordinate, selected at random, until the computer hits the second half of the ship. Again, this helps to make the player's experience more like playing another human, who would apply this logic when playing the game.
+    * The only advantage the player has over the computer is that the code has not been written to enable the computer to recognise when there are not two empty spaces next to each other and so the computer may guess a space where there is no adjacent space and so a ship cannot possibly be situated there.
 
 ## Manual Testing of Functionality of the Game
 
