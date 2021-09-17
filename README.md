@@ -228,9 +228,9 @@ For more information on forking and cloning repositories, see [GitHub Docs](http
 * The idea for using a Board class for the player and computer boards and the Board instance attributes of name, type, guesses and ships was taken from the Code Institute example Battleships project.
 * The while loop validation structure in the get_player_row_guess and get_player_column_guess functions was taken from the Code Institute Love Sandwiches project.
 * The except statement structure in the validate_player_row_guess function was taken from the Code Institute Love Sandwiches project.
-* The code for creating alphabet dictionaries of capital letter keys and number values or number keys and capital letter values was taken from an answer given by user10084443 on [this Stack Overflow post](https://stackoverflow.com/questions/453576/is-there-a-fast-way-to-generate-a-dict-of-the-alphabet-in-python) 
-* The array-backed grid means of creating the boards was inspired by point 8 (16.2.2 Populating the Grid) in [this Program Arcade Games with Python and Pygame, Chapter 16: Array-Backed Grids article](http://programarcadegames.com/index.php?lang=en&chapter=array_backed_grids). 
-* Having to use return to make recursive functions work was a bug solved by an answer given by roippi on [this Stack Overflow post](https://stackoverflow.com/questions/17778372/why-does-my-recursive-function-return-none)
+* The code for creating alphabet dictionaries of capital letter keys and number values or number keys and capital letter values was taken from an answer given by user10084443 on [this Stack Overflow post](https://stackoverflow.com/questions/453576/is-there-a-fast-way-to-generate-a-dict-of-the-alphabet-in-python).
+* The array-backed grid means of creating the boards was inspired by point 8 at 16.2.2 (Populating the Grid) in [this Program Arcade Games with Python and Pygame, Chapter 16: Array-Backed Grids article](http://programarcadegames.com/index.php?lang=en&chapter=array_backed_grids). 
+* Having to use return to make recursive functions work was a bug solved by an answer given by roippi on [this Stack Overflow post](https://stackoverflow.com/questions/17778372/why-does-my-recursive-function-return-none).
       
 ### Content
 
