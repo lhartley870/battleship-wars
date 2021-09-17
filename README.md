@@ -126,17 +126,16 @@ The Board class also has various methods that can be utilised by the board insta
 * [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) programming language for the logic of the application.
 
 ### Modules and Libraries
-* The [inbuilt python random library](https://docs.python.org/3/library/random.html) was used and necessary to generate pseudo-random numbers and choices to represent  
-  the computer's choices in playing the game. For example, random.choice was used:
+* The [inbuilt python random library](https://docs.python.org/3/library/random.html) was used and necessary to generate pseudo-random numbers and choices to represent the computer's choices in playing the game. For example, random.choice was used:
   * in the Ship class get_ship_orientation method to randomly select 'Horizontal' or 'Vertical' for the orientation of each ship instance; and
-  * in the get_computer_guess fucntion else statment (where the computer has found half of a ship) to pick a random computer guess from the filtered list of coordinates 
+  * in the get_computer_guess function else statment (where the computer has found half of a ship) to pick a random computer guess from the filtered list of coordinates 
     surrounding the hit coordinate.
+  
   Also random.randrange was used to:
-  * generate a random board row and column for the first coordinate location for each ship in the Ship class get_board_row_or_column method; and
-  * generate a random board row and column to represent the computer's guess where no ships or only full ships have been found by the computer in the get_computer_guess   
-    function. 
-* The [colorama module](https://pypi.org/project/colorama/) was used as the developer felt that use of colours in the game was essential to enhance the user experience. This  
-  module allows coloured text to be printed to the the terminal. With the board row numbers, column letters, board space dots, hit guesses, miss guesses and the ships all being coloured white against a black background, even though unguessed spaces, hit spaces, missed spaces and ship spaces all have different symbols, it is very difficult for a player to keep track of the updated board with ease. The developer considered that using different colours for the ships, hit spaces and miss spaces, in combination with the different symbols would help the user to more easily interpret the boards at a glance. Green was chosen for the ships as a neutral colour, red was chosen to represent a hit and yellow was chosen to represent a miss. 
+  * generate a random board row number and column number for the first coordinate location for each ship in the Ship class get_board_row_or_column method; and
+  * generate a random board row number and column number to represent the computer's guess where no ships or only full ships have been found by the computer in the get_computer_guess function.
+
+* The [colorama module](https://pypi.org/project/colorama/) was used as the developer felt that use of colours in the game was essential to enhance the user experience. This module allows coloured text to be printed to the terminal. If the board row numbers, column letters, board space dots, hit guesses, miss guesses and the ships are all coloured white against a black background, even though unguessed spaces, hit spaces, missed spaces and ship spaces all have different symbols, it would be very difficult for a player to keep track of the updated board with ease. The developer considered that using different colours for the ships, hit spaces and miss spaces, in combination with the different symbols would help the user to more easily interpret the boards at a glance. Green was chosen for the ships as a neutral colour, red was chosen to represent a hit and yellow was chosen to represent a miss. 
 
 ### Resources and Programs
 * [Git](https://git-scm.com/) was the version control system used via the Gitpod terminal to commit and push code to GitHub.
