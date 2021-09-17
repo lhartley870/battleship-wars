@@ -15,8 +15,10 @@ These were all errors for the same issue, stated to be *'line break before binar
     * The user has the option to enter their name at the start of a new game. If the player enters nothing then the name 'Player' is assigned to them instead. 
     * The player's name appears in the welcome message:
     ![View of welcome message in live application](/readme-documents/application-screenshots/welcome-message.png)
+    
     as a heading to the player' board throughout the game:
     ![View of player board in live application](/readme-documents/application-screenshots/player-board.png)
+    
     and in the game over message if the player has won the game:
     ![View of player wins message in live application](/readme-documents/application-screenshots/player-wins.png)
     * This personalises the player's game experience, helping to draw the player in and make them feel a part of the game.    
