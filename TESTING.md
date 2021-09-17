@@ -11,12 +11,10 @@ These were all errors for the same issue, stated to be *'line break before binar
 
 ## UX (User Experience) Stories Testing
 1. As a user of the application, I want a personalised game experience. 
-
     ![View of name entry prompt in live application](/readme-documents/application-screenshots/name-entry.png)
 
     * The user has the option to enter their name at the start of a new game. If the player enters nothing then the name 'Player' is assigned to them instead. 
     * The player's name appears in the welcome message:
-    
     ![View of welcome message in live application](/readme-documents/application-screenshots/welcome-message.png)
 
     as a heading to the player' board throughout the game:
