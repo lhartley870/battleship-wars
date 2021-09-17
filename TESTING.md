@@ -17,9 +17,11 @@ These were all errors for the same issue, stated to be *'line break before binar
     ![View of welcome message in live application](/readme-documents/application-screenshots/welcome-message.png)
     
     as a heading to the player' board throughout the game:
+    
     ![View of player board in live application](/readme-documents/application-screenshots/player-board.png)
     
     and in the game over message if the player has won the game:
+    
     ![View of player wins message in live application](/readme-documents/application-screenshots/player-wins.png)
     * This personalises the player's game experience, helping to draw the player in and make them feel a part of the game.    
 
@@ -34,7 +36,7 @@ These were all errors for the same issue, stated to be *'line break before binar
 3. As a user of the application, I want to easily be able to see at a glance where my ships are on my board and the locations where I or the computer have had a hit or a miss on the other's board.
 
     ![View of player board in live application](/readme-documents/application-screenshots/player-board.png)
-    ![View of computer board in live application](/readme-documents/application-screenshots/player-board.png)
+    ![View of computer board in live application](/readme-documents/application-screenshots/computer-board.png)
     
     * Although the symbols for ship (S), a hit (*) and a miss (0) are different, having completely white boards makes the current game status more and more difficult to easily see as the game goes on.
     * The use of the colour yellow to show misses, red to show hits and green to show the ships, enables the player to easily and quickly see the current state of play after each round.
