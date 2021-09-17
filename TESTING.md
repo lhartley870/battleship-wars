@@ -1,12 +1,13 @@
 # Testing
 
 ## Validator
-[The PEP8 Online Validator Service](http://pep8online.com/) was used for testing the python code for the site. The following result shows that no errors have been found: 
-* [Python code in run.py file result](/readme-documents/validator-results/validator-clear.png)
+[The PEP8 Online Validator Service](http://pep8online.com/) was used for testing the python code for the application. The following result shows that no errors have been found: 
+* [Python code in run.py file result](/readme-documents/validator-screenshots/validator-clear.png)
 
 Initially when the project was run through the validator the following errors were shown:
-+ [Python code in run.py file initial result](/readme-documents/validator-results/validator-warnings.png).
-* These were all errors for the same issue and stated the issue to be *'line break before binary operator'*. This was resolved by moving the applicable lines breaks to after the binary operators, in all cases the binary operator being a '+'.    
++ [Python code in run.py file initial result](/readme-documents/validator-screenshots/validator-warnings.png).
+
+These were all errors for the same issue, stated to be *'line break before binary operator'*. This was resolved by moving the applicable line breaks to after the binary operators, in all cases the binary operator being a '+'.    
 
 ## UX (User Experience) Stories Testing
 1. As a user of the application, I want a personalised game experience. 
