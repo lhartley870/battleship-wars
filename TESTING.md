@@ -133,7 +133,7 @@ The application was fully tested as it was being developed in the local terminal
 
 ### Manual Testing in the Local Terminal
 
-As well as all of the points tested in the Code Institute Heroku terminal mentioned above, the backend logic was checked using print statements throughout the code at all stages in the local terminal as the application was being built. When the game was complete, the following points in particular were checked to ensure the correct running of the game.
+As well as all of the points tested in the Code Institute Heroku terminal mentioned above, the backend logic was checked in the local terminal using print statements throughout the code at all stages in the development of the application. When the game was complete, the following points in particular were checked to ensure the correct running of the game:
 
 26. The player's ship coordinates were printed at the start of a new game and were checked against the green 'S' symbols printed on the player's board to make sure that they matched up. All was as expected.
 27. The computer's ship coordinates were also printed at the start of a new game and were checked against the red '*' symbols printed on the computer's board when the developer entered those coordinates to make sure they matched up. All was as expected.
@@ -155,10 +155,10 @@ As well as all of the points tested in the Code Institute Heroku terminal mentio
         * the overall list of hit_barrier_coords for all ships hit by the computer so far was printed and checked; 
         * the guesses made so far by the computer were printed and checked;
         * the list of hit_barrier_coords was printed again to make sure that the surrounding coordinates for the ship just hit were added to the list; 
-        * the computer's list of guesses to date was re-printed to make sure that the barrier coordinates were not added to that list (the barrier coordinates not guessed by the computer could not be added to that list as it would cause issues e.g. those coordinates would be printed as misses on the player board even though the computer hadn't guessed them). 
+        * the computer's list of guesses to date was re-printed to make sure that the barrier coordinates were not added to that list (the barrier coordinates could not be added to the guesses list as it would cause issues e.g. those coordinates would be printed as misses on the player board even though the computer hadn't guessed them). 
     * All of the above points were checked as the game progressed and the results were as expected. 
     * A visual check of the player board as the game progressed was also made to ensure that once a ship was hit by the computer, the computer no longer guessed any coordinates horizontally or vertically next to that ship. All was as expected.
-    * When the game ended and a new game was started, the coordinates of the new computer ships and player's ships were checked to make sure they were different to the last game and the guesses, hits_misses and barrier_coords board property lists were back to being empty lists.
+    * When the game ended and a new game was started, the coordinates of the new computer's ships and player's ships were checked to make sure that they were different to the last game and the guesses, hits_misses and barrier_coords property lists for each board were back to being empty lists.
  
 ## Further Testing
 
