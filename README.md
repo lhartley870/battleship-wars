@@ -162,13 +162,13 @@ This project was deployed using Code Institute's mock terminal for Heroku. The p
 1. Log into Heroku.
 2. From the Dashboard, Click on the 'New' button and then the dropdown button called 'Create new app'.
 ![View of Heroku Dashboard](/readme-documents/deployment-screenshots/heroku-dashboard.png)
-3. Enter a unique App name and select your region as either 'Europe' or 'United States'. If the app name is unique you will get a green tick and a message saying that your chosen name is available, otherwise you will see a red exclamation mark and a message that the name is unavailable.
+3. Enter a unique App name and select your region as either 'Europe' or 'United States'. If the app name is unique you will get a green tick and a message saying that your chosen name is available, otherwise you will see a red exclamation mark and a message saying that the name is unavailable.
 ![View of Create new app page](/readme-documents/deployment-screenshots/create-new-app.png)
 4. Click on 'Create app'.
 5. Click on 'Settings' in the bar across the top of the page. You will then be taken to a page that looks like this:
 ![View of Settings page](/readme-documents/deployment-screenshots/app-settings.png)
 6. Scroll down to where it says 'Config Vars' down the left hand side of the page and click on 'Reveal Config Vars'.
-7. Enter 'PORT' in the field for 'Key' and '8000' in the field for 'Value' and click 'Add.
+7. Enter 'PORT' in the field for 'Key' and '8000' in the field for 'Value' and click 'Add'.
 ![View of Config Vars section of Settings page](/readme-documents/deployment-screenshots/config-vars.png)
 8. Scroll down to where it says 'Buildpacks' down the left hand side of the page and click on 'Add buildpack'. 
 9. Select 'python' and click 'Save changes'. 
@@ -178,9 +178,9 @@ This project was deployed using Code Institute's mock terminal for Heroku. The p
 ![View of Buildpacks section of Settings page](/readme-documents/deployment-screenshots/buildpacks.png)
 13. Scroll back up to the top of the screen and this time click on 'Deployment' in the bar across the top of the page. You will then be taken to a page that looks like this:
 ![View of Deployment page](/readme-documents/deployment-screenshots/app-deployment.png)
-14. Where it says 'Deployment Method' on the left hand side of the screen clickon GitHub.
+14. Where it says 'Deployment Method' on the left hand side of the screen click on GitHub.
 15. Where it says 'Connect to GitHub' down the left hand side of the screen, type your repository name and click 'Search'.
-16. Click on 'Connect' next to your repository name
+16. Click on 'Connect' next to your repository name.
 ![View of Connect to Github section of Deployment page](/readme-documents/deployment-screenshots/connect-to-github.png)
 17. Scroll down to where it says 'Automatic Deploys' and 'Manual Deploy' down the left hand side of the screen. 
 18. If you want Heroku to rebuild your app every time any new changes to the code are pushed to GitHub, check that the branch you want to deploy is correct and click on 'Enable Automatic Deploys'. You will then need to check that the branch you want to deploy is correct and click on 'Deploy Branch' in the Manual Deploy' section. When you have clicked on 'Enable Automatic Deploys' your screen will look like this:
@@ -208,13 +208,13 @@ In order to work on a repository you have forked, you will need to clone it to y
 2. Underneath the Settings button at the top of the repository there is a button with a dropdown arrow that says 'Code'. Click on it.  
 3. To clone the repository using HTTPS, undeneath 'Clone' select 'HTTPS' so that there is an orange line underneath 'HTTPS'. Click on this button:
 
-![View of local clone button](/readme-documents/screenshots/local-clone-button.png)
+![View of local clone button](/readme-documents/deployment-screenshots/local-clone-button.png)
 
 4. Open the Terminal in your IDE/editor. 
 5. Change the current working directory to the one where you want the cloned directory to be located.  
 6. Type 'git clone' and then paste the URL you copied earlier. It will look like this with your username instead of 'YOUR-USERNAME' and the name of the forked repository you are cloning instead of 'NAME OF REPOSITORY YOU ARE CLONING': 
 
-![View of terminal command to clone fork](/readme-documents/screenshots/clone-command.png)
+![View of terminal command to clone fork](/readme-documents/deployment-screenshots/clone-command.png)
 
 7. Press enter and your local clone will be created. 
 
