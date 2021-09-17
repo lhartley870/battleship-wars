@@ -145,7 +145,7 @@ The Board class also has various methods that can be utilised by the board insta
 * [Am I Responsive?](http://ami.responsivedesign.is/) was used to create the screenshots showing how the application looks on the deployment terminal. 
 * [W3 Schools](https://www.w3schools.com/) and [Stack Overflow](https://stackoverflow.com/) were used for general guidance and learning. 
 * [This Stack Overflow post](https://stackoverflow.com/questions/48343387/valueerror-and-typeerror-in-python) and [this Built-in Exceptions Python documentation](https://docs.python.org/3/library/exceptions.html) were used for guidance on Python exception handling. 
-* [PEP8 Online](http://pep8online.com/), was used for testing the python code for the site.
+* [PEP8 Online](http://pep8online.com/), was used for testing the python code for the application.
 * [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and [Mastering Markdown](https://guides.github.com/features/mastering-markdown/) were 
   used for preparing the README.md and TESTING.md files.
 
