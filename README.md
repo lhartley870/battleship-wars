@@ -128,7 +128,7 @@ The Board class also has various methods that can be utilised by the board insta
 ### Modules and Libraries
 * The [inbuilt python random library](https://docs.python.org/3/library/random.html) was used and necessary to generate pseudo-random numbers and choices to represent the computer's choices in playing the game. For example, random.choice was used:
   * in the Ship class get_ship_orientation method to randomly select 'Horizontal' or 'Vertical' for the orientation of each ship instance; and
-  * in the get_computer_guess function else statment (where the computer has found half of a ship) to pick a random computer guess from the filtered list of coordinates 
+  * in the get_computer_guess function else statement (where the computer has found half of a ship) to pick a random computer guess from the filtered list of coordinates 
     surrounding the hit coordinate.
   
   Also random.randrange was used to:
