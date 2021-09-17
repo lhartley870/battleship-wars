@@ -50,7 +50,7 @@ These were all errors for the same issue, stated to be *'line break before binar
     * If the player enters a row number that is not between 1 and 10 (inclusive), they will receive a message informing them that they must enter a row number between 1 and 10 and they will be prompted to enter a row number again.
 
     ![View of wrong column entries in live application](/readme-documents/application-screenshots/wrong-column-entry.png)
-    * As shown in the screenshot above, if the player accidentally enters a symbol, a number, nothing or a letter that is not within A to J (inclusive) as the column letter, they will receive a message informing them that they must enter a collumn letter between A and J. It does not matter if the user enters an uppercase or lowercase letter as the code will automatically convert the entry to uppercase. If the user has a valid row entry but an invalid column entry, the user will only be asked to enter another column entry, not their entire guess.
+    * As shown in the screenshot above, if the player accidentally enters a symbol, a number, nothing or a letter that is not within A to J (inclusive) as the column letter, they will receive a message informing them that they must enter a column letter between A and J. It does not matter if the user enters an uppercase or lowercase letter as the code will automatically convert the entry to uppercase. If the user has a valid row entry but an invalid column entry, the user will only be asked to enter another column entry, not their entire guess, minimising user frustration.
 
     * The entering of an incorrect row number entry or column letter entry does not therefore crash the game, enabling the user to be confident that if they make a mistake, they can continue with the game.
 
@@ -66,9 +66,9 @@ These were all errors for the same issue, stated to be *'line break before binar
     ![View of round results in live application](/readme-documents/application-screenshots/round-results.png)
 
     * When the player and computer have both completed their guesses for the round, the user will receive a round results summary. This is surrounded by dashed lines above and below the message to clearly separate it from the other messages and data in the terminal. 
-    * The user is informed of the player and computer's scores, the last board coordinate guesses made by the player and computer and whether those guesses were hits or misses. 
-    * This information at the end of each round keeps the user motivated and interested in the game and the re-printing of the user's last guess, helps to inform their next guess without having to look at the computer board.
-    * Additionally, when the game is over the player is given the final scores to see how much they won or lost by. This encourages the user to keep playing. 
+    * The user is informed of the player and computer scores, the last board coordinate guesses made by the player and computer and whether those guesses were hits or misses. 
+    * This information at the end of each round keeps the user motivated and interested in the game and the re-printing of the user's last guess helps to inform their next guess without having to look at the computer board.
+    * Additionally, when the game is over the player is given the final scores to see by how much they won or lost. This encourages the user to keep playing. 
 
 7. As a user of the application, I want to be able to start a new game if I'm part way through an existing game.
 
@@ -82,9 +82,9 @@ These were all errors for the same issue, stated to be *'line break before binar
 
     ![View of player board in live application](/readme-documents/application-screenshots/player-board.png)
     
-    * It may not be obvious to a player but the python code has been written so that the computer is aware that two ships cannot be placed next to each other. Once a full ship has been hit, its surrounding coordinates horizontally and vertically are filtered out of the computer's future guesses. This means that, in this respect, the computer has the same advantage as the human, and makes the game for the player more like playing against a real human. 
-    * Additionally, once the computer has hit half of a ship, the computer will try the coordinate above, below, to the right and to the left of the hit coordinate, selected at random, until the computer hits the second half of the ship. Again, this helps to make the player's experience more like playing another human, who would apply this logic when playing the game.
-    * The only advantage the player has over the computer is that the code has not been written to enable the computer to recognise when there are not two empty spaces next to each other and so the computer may guess a space where there is no adjacent space and so a ship cannot possibly be situated there.
+    * It may not be obvious to a player but the python code has been written so that the computer is aware that two ships cannot be placed next to each other horizontally or vertically. Once a full ship has been hit, its surrounding coordinates horizontally and vertically are filtered out of the computer's future guesses. This means that, in this respect, the computer has the same advantage as the human, and, for the player, makes the game more like playing against a real human. 
+    * Additionally, once the computer has hit half of a ship, the computer will try the coordinates above, below, to the right and to the left of the hit coordinate, selected at random, until the computer hits the second half of the ship. Again, this helps to make the player's experience more like playing another human, who would apply this logic when playing the game.
+    * The only advantage the player has over the computer is that the code has not been written to enable the computer to recognise when there are not two empty spaces next to each other and so the computer may guess a space surrounded by misses, for example, where a ship cannot possibly be situated.
 
 ## Manual Testing of Functionality of the Game
 
